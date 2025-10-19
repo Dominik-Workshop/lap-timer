@@ -22,3 +22,14 @@
 * **5 V USB C power supply** for the timer board.
 * **Li-ion battery power** for transmitter boards.
 * Detachable **receiver board**, used only in 2-gate mode.
+
+## Project timeline
+
+Planned development schedule for the project:
+
+| Date        | Milestone                                       | Status |
+|--------------|-------------------------------------------------|---------|
+| **02.11.2025** | Finish PCB design and send for manufacturing   | ⏳ In progress |
+| **23.11.2025** | Estimated arrival of manufactured PCBs         | ⏳ Pending |
+| **30.11.2025** | Complete basic bring-up and hardware testing   | ⏳ Pending |
+| **30.12.2025** | Finalize firmware development and verification | ⏳ Pending |

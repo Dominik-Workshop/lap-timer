@@ -1,0 +1,20 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "c6951331-127b-46f8-97b9-b4f2222f059c")
+	(paper "A4")
+	(title_block
+		(title "Lap Timer: Receiver Board")
+		(date "2025-10-19")
+		(rev "1.0.0")
+		(comment 1 "Project author: <author>")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

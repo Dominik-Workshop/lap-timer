@@ -663,9 +663,59 @@
 			(embedded_fonts no)
 		)
 	)
+	(wire
+		(pts
+			(xy 148.59 95.25) (xy 153.67 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24c72aac-6e7f-4353-8757-24b615714a08")
+	)
+	(wire
+		(pts
+			(xy 151.13 102.87) (xy 151.13 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d415439-45d1-4a54-b98f-fcd9c61c3776")
+	)
+	(wire
+		(pts
+			(xy 151.13 100.33) (xy 148.59 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63957e29-dc24-4d7a-ab9b-9ff1aeb9a700")
+	)
+	(wire
+		(pts
+			(xy 148.59 90.17) (xy 151.13 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a258084-3b27-4a56-adbe-99bfc8e6344f")
+	)
+	(wire
+		(pts
+			(xy 151.13 90.17) (xy 151.13 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b60695e0-0c83-4edb-b011-02e3a80a7d4a")
+	)
 	(hierarchical_label "GATE_TRIGGER"
 		(shape output)
-		(at 187.96 99.06 0)
+		(at 153.67 95.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)

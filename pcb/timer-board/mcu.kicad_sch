@@ -1909,6 +1909,512 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "DW-connectors:Custom-programming-connector-1x6_P1.27mm"
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 8.89 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "Programming connector"
+				(at 8.89 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "DW-footprints:Custom-programming-connector-1x6_P1.27mm"
+				(at 8.89 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 8.89 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "Custom programming connector 1x6, P1.27mm"
+				(at 8.89 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(symbol "Custom-programming-connector-1x6_P1.27mm_1_1"
+				(rectangle
+					(start 2.54 2.54)
+					(end 6.35 -15.24)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start 2.54 0.127)
+					(end 3.81 -0.127)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.54 -2.413)
+					(end 3.81 -2.667)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.54 -4.953)
+					(end 3.81 -5.207)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.54 -7.493)
+					(end 3.81 -7.747)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.54 -10.033)
+					(end 3.81 -10.287)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 2.54 -12.573)
+					(end 3.81 -12.827)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "DW-mechanical:SW_KMR211NGLFS"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 15.24 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "SW_KMR211NGLFS"
+				(at 15.24 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "DW-footprints:SW_KMR211NGLFS"
+				(at 15.24 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C221676.pdf"
+				(at 15.24 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "32V Round Button SPST-NO 50mA SMD Tactile Switches ROHS"
+				(at 15.24 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "C&K"
+				(at 15.24 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "MPN" "KMR211NGLFS"
+				(at 15.24 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "LCSC" "C221676"
+				(at 15.24 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "2x BUTTON"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_KMR211NGLFS_1_1"
+				(polyline
+					(pts
+						(xy 2.286 0.762) (xy 5.334 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 2.032) (xy 4.572 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0.762) (xy 3.81 2.032)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 5.08 0)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "DW-power-symbols:+3V3"
 			(power)
 			(pin_numbers
@@ -2143,6 +2649,12 @@
 		(uuid "0e6dae28-c0bc-4d6e-b90a-92d2f6ae6550")
 	)
 	(junction
+		(at 194.31 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2345afc0-7219-4cb4-a4f7-f19a9594177f")
+	)
+	(junction
 		(at 205.74 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2153,6 +2665,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4a2b65ec-f818-40cd-af75-33dd373c396e")
+	)
+	(junction
+		(at 191.77 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68776df9-09c2-40fe-8797-65efb6759f17")
 	)
 	(junction
 		(at 185.42 52.07)
@@ -2438,6 +2956,16 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 86.36) (xy 194.31 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "153fc8ee-e5b9-42f8-8bf4-3f73986fc471")
+	)
+	(wire
+		(pts
 			(xy 170.18 149.86) (xy 170.18 146.05)
 		)
 		(stroke
@@ -2448,7 +2976,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 76.2) (xy 167.64 76.2)
+			(xy 167.64 76.2) (xy 191.77 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2528,6 +3056,26 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 125.73) (xy 215.9 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "436c7992-5a50-4a09-86db-d592d9f34f52")
+	)
+	(wire
+		(pts
+			(xy 194.31 88.9) (xy 191.77 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4710e4bb-116d-459e-a2c7-faf1ae0aa52b")
+	)
+	(wire
+		(pts
 			(xy 167.64 66.04) (xy 170.18 66.04)
 		)
 		(stroke
@@ -2545,6 +3093,16 @@
 			(type default)
 		)
 		(uuid "4de7ae90-6824-4c6d-9bd7-31a3e457ccd4")
+	)
+	(wire
+		(pts
+			(xy 227.33 123.19) (xy 215.9 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f1cb6cb-dd42-4c86-9e88-ecb05ce6b8cb")
 	)
 	(bus
 		(pts
@@ -2565,6 +3123,16 @@
 			(type default)
 		)
 		(uuid "54ad5ba8-c810-4dad-98a5-262b7cfe6d2b")
+	)
+	(wire
+		(pts
+			(xy 227.33 120.65) (xy 215.9 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56308df6-114a-4e80-97fd-c83384354003")
 	)
 	(bus
 		(pts
@@ -2595,6 +3163,16 @@
 			(type default)
 		)
 		(uuid "6024b863-bb67-4e56-8eec-317712b135bf")
+	)
+	(wire
+		(pts
+			(xy 224.79 115.57) (xy 224.79 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "634d0d47-d48a-4454-b155-04b520d9fe12")
 	)
 	(wire
 		(pts
@@ -2716,6 +3294,16 @@
 		)
 		(uuid "9c6b4c9d-71ca-42ea-bca8-59c9eddb8e2f")
 	)
+	(wire
+		(pts
+			(xy 191.77 76.2) (xy 194.31 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f52d6f8-1eea-4689-99a3-23b990d82bc2")
+	)
 	(bus
 		(pts
 			(xy 231.14 91.44) (xy 231.14 93.98)
@@ -2748,6 +3336,26 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 118.11) (xy 224.79 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a54f57aa-f129-4f5d-92f2-f4c85ca1075e")
+	)
+	(wire
+		(pts
+			(xy 194.31 78.74) (xy 194.31 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a68a7aae-0445-4d90-89b7-06b416b5a20a")
+	)
+	(wire
+		(pts
 			(xy 170.18 137.16) (xy 167.64 137.16)
 		)
 		(stroke
@@ -2755,6 +3363,36 @@
 			(type default)
 		)
 		(uuid "a8501cc3-faa1-40ff-a8fb-21b31436c7cc")
+	)
+	(wire
+		(pts
+			(xy 191.77 86.36) (xy 191.77 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8d07ca2-8203-4b07-a956-b361ae8c0cf8")
+	)
+	(wire
+		(pts
+			(xy 227.33 130.81) (xy 215.9 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8ebcd97-20ca-4f2b-8d26-eda797246a76")
+	)
+	(wire
+		(pts
+			(xy 227.33 128.27) (xy 224.79 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6076b96-6c4a-4ae9-a3e1-d441422e18d9")
 	)
 	(wire
 		(pts
@@ -2798,6 +3436,16 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 88.9) (xy 194.31 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4741a7e-83fe-4726-b8e2-6a96dcd42fb8")
+	)
+	(wire
+		(pts
 			(xy 127 88.9) (xy 102.87 88.9)
 		)
 		(stroke
@@ -2838,6 +3486,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 128.27) (xy 224.79 133.35)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "e98a3f04-b5fb-4cdb-8f7f-f5ad6e530454")
+	)
+	(wire
+		(pts
 			(xy 205.74 52.07) (xy 205.74 54.61)
 		)
 		(stroke
@@ -2845,6 +3503,16 @@
 			(type default)
 		)
 		(uuid "ebeff99c-8c61-4bb3-bd41-0aed39168dc5")
+	)
+	(wire
+		(pts
+			(xy 191.77 76.2) (xy 191.77 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef1429d1-438c-46df-9f03-527c1ebd423b")
 	)
 	(bus
 		(pts
@@ -2886,6 +3554,26 @@
 		)
 		(uuid "0a4b77f2-5b6b-4ee1-8555-325e4f481421")
 	)
+	(label "~{RST}"
+		(at 215.9 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "19a79a80-5f9a-4ffa-a6d8-b9fc14cbee48")
+	)
+	(label "SWDIO"
+		(at 215.9 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "22f436a8-0cea-421a-8821-b8d30c1a3875")
+	)
 	(label "USB.D+"
 		(at 110.49 91.44 180)
 		(effects
@@ -2905,6 +3593,16 @@
 			(justify left bottom)
 		)
 		(uuid "45be896a-dc38-4bb9-8671-406433754964")
+	)
+	(label "SWCLK"
+		(at 215.9 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "636ecefc-bb1d-4d82-9c25-276326a63402")
 	)
 	(label "NRST"
 		(at 179.07 71.12 180)
@@ -2946,6 +3644,16 @@
 		)
 		(uuid "c4f60078-21a4-49ad-be7d-4ad9c2796ca7")
 	)
+	(label "BOOT0"
+		(at 215.9 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ce71ab75-43f6-4070-8a66-909227ae12e0")
+	)
 	(label "OSC_OUT"
 		(at 179.07 132.08 180)
 		(effects
@@ -2967,7 +3675,7 @@
 		(uuid "eacd2f25-0847-42b8-9359-b24a1eb14d0b")
 	)
 	(hierarchical_label "GATE_TRIGGER"
-		(shape output)
+		(shape input)
 		(at 190.5 97.79 180)
 		(effects
 			(font
@@ -2998,6 +3706,161 @@
 			(justify right)
 		)
 		(uuid "6790b9fa-67bb-4b9e-97e3-e31e27be892b")
+	)
+	(symbol
+		(lib_id "DW-connectors:Custom-programming-connector-1x6_P1.27mm")
+		(at 227.33 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01827ed6-9bc4-44cd-975a-d9a00be9a4d3")
+		(property "Reference" "J11"
+			(at 234.95 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Programming connector"
+			(at 234.95 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "DW-footprints:Custom-programming-connector-1x6_P1.27mm"
+			(at 236.22 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "Custom programming connector 1x6, P1.27mm"
+			(at 236.22 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "88a529cd-50ef-498b-850f-925d67d3a0b8")
+		)
+		(pin "1"
+			(uuid "5a65e52d-4e67-4e78-9669-ad57a3d78dd5")
+		)
+		(pin "2"
+			(uuid "9877e20e-1d05-43d2-9183-eb391afa10f6")
+		)
+		(pin "3"
+			(uuid "eb7fe15f-154a-42eb-acd9-0bea91807a50")
+		)
+		(pin "6"
+			(uuid "d812df58-c288-45e7-b62e-1ce72c88a3e0")
+		)
+		(pin "5"
+			(uuid "2e3c0aeb-4d2d-45e5-aed5-892c44b2c6f8")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:GND")
+		(at 194.31 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d873a51-050f-4cab-81ae-9888d7e83214")
+		(property "Reference" "#PWR010"
+			(at 194.31 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 194.31 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 194.31 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3a51c550-b70e-4ef3-aee5-293230c0aa84")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "DW-power-symbols:GND")
@@ -3124,6 +3987,372 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
 					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:GND")
+		(at 224.79 133.35 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "232b399f-f3ec-43b8-b76b-59a8dfccc289")
+		(property "Reference" "#PWR0166"
+			(at 224.79 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 224.79 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 224.79 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f7f68098-b42b-41d2-8e5b-ac1a5517607e")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "#PWR0166")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-mechanical:SW_KMR211NGLFS")
+		(at 247.65 148.59 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2d8024c1-94ea-4213-adf3-52e5730a505a")
+		(property "Reference" "SW4"
+			(at 251.46 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_KMR211NGLFS"
+			(at 245.11 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:SW_KMR211NGLFS"
+			(at 242.57 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C221676.pdf"
+			(at 240.03 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "32V Round Button SPST-NO 50mA SMD Tactile Switches ROHS"
+			(at 237.49 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K"
+			(at 234.95 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KMR211NGLFS"
+			(at 251.46 153.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C221676"
+			(at 229.87 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cffeb6c5-1351-4a90-be6e-614363b8f785")
+		)
+		(pin "1"
+			(uuid "790a0839-8118-46b3-9bf2-afaccce7420e")
+		)
+		(pin "3"
+			(uuid "cccdac85-1ed5-4767-a54c-20c0ead24c47")
+		)
+		(pin "4"
+			(uuid "e2cb70d1-121c-4343-b6b8-6482cedd4364")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "SW4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:+3V3")
+		(at 224.79 115.57 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "32cb98bc-a6bb-44c5-b7b0-f18139e8bcfd")
+		(property "Reference" "#PWR0161"
+			(at 224.79 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 224.79 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 224.79 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "37f68d9c-4b44-4f15-9f43-965f77f74b13")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "#PWR0161")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-mechanical:SW_KMR211NGLFS")
+		(at 219.71 147.32 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e1f35ca-8ee8-4394-9e79-2ca821e6cce5")
+		(property "Reference" "SW3"
+			(at 223.52 149.86 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_KMR211NGLFS"
+			(at 217.17 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:SW_KMR211NGLFS"
+			(at 214.63 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C221676.pdf"
+			(at 212.09 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "32V Round Button SPST-NO 50mA SMD Tactile Switches ROHS"
+			(at 209.55 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K"
+			(at 207.01 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KMR211NGLFS"
+			(at 223.52 152.4 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C221676"
+			(at 201.93 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "5b9ee7fb-4abe-426a-b2f8-2dcb1ece3384")
+		)
+		(pin "1"
+			(uuid "8e931dc8-ac52-40e8-8301-0e85c2ca2991")
+		)
+		(pin "3"
+			(uuid "9894b8d9-1864-4b9e-8e42-1466d795becd")
+		)
+		(pin "4"
+			(uuid "7386a2ae-9e61-41a7-8434-d3a5d7a95c96")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -3869,6 +5098,123 @@
 		)
 	)
 	(symbol
+		(lib_id "DW-mechanical:SW_KMR211NGLFS")
+		(at 195.58 146.05 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8a13c2b5-2b13-450c-bb53-40726b07155d")
+		(property "Reference" "SW2"
+			(at 199.39 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_KMR211NGLFS"
+			(at 193.04 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:SW_KMR211NGLFS"
+			(at 190.5 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C221676.pdf"
+			(at 187.96 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "32V Round Button SPST-NO 50mA SMD Tactile Switches ROHS"
+			(at 185.42 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K"
+			(at 182.88 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KMR211NGLFS"
+			(at 199.39 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C221676"
+			(at 177.8 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "55023f82-9d91-499a-84e0-ff06d80bfe0b")
+		)
+		(pin "1"
+			(uuid "525c9cfe-9e3c-4af5-9067-97c2d4981f6a")
+		)
+		(pin "3"
+			(uuid "344fcc4f-23bc-4aa7-8261-6a2548505811")
+		)
+		(pin "4"
+			(uuid "b7740b58-c5db-4cdd-a147-ac64e1387a8f")
+		)
+		(instances
+			(project ""
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "DW-capacitors:C-100n-0402")
 		(at 175.26 59.69 90)
 		(unit 1)
@@ -4147,6 +5493,122 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
 					(reference "#PWR020")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-mechanical:SW_KMR211NGLFS")
+		(at 194.31 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7b74c18-3924-4efe-a32f-2bd5a9d9c436")
+		(property "Reference" "SW1"
+			(at 196.85 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SW_KMR211NGLFS"
+			(at 191.77 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:SW_KMR211NGLFS"
+			(at 189.23 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C221676.pdf"
+			(at 186.69 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "32V Round Button SPST-NO 50mA SMD Tactile Switches ROHS"
+			(at 184.15 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K"
+			(at 181.61 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "KMR211NGLFS"
+			(at 196.85 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "LCSC" "C221676"
+			(at 176.53 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "732d4979-80a2-4afc-a86d-d824a9e8d378")
+		)
+		(pin "1"
+			(uuid "be32f28d-4679-4bd9-b5fa-56884cfa3bb3")
+		)
+		(pin "3"
+			(uuid "c1add1b6-f34f-4ade-a40b-1718e9563d47")
+		)
+		(pin "4"
+			(uuid "186c75a4-a6b7-41a1-ba4b-488b9f650adf")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "SW1")
 					(unit 1)
 				)
 			)

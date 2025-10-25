@@ -118,9 +118,9 @@
 				(justify right)
 			)
 		)
-		(pin "GATE_TRIGGER" output
-			(at 127 82.55 180)
-			(uuid "a6d4339c-7841-47c1-a757-482ce01c2fbc")
+		(pin "USB{USB}" bidirectional
+			(at 127 104.14 180)
+			(uuid "2807e72d-a560-4eaa-a79b-d0d56978461c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -128,9 +128,9 @@
 				(justify left)
 			)
 		)
-		(pin "USB{USB}" bidirectional
-			(at 127 104.14 180)
-			(uuid "2807e72d-a560-4eaa-a79b-d0d56978461c")
+		(pin "GATE_TRIGGER" input
+			(at 127 82.55 180)
+			(uuid "b320c75e-0fb3-42a0-8066-11a0fb95b124")
 			(effects
 				(font
 					(size 1.27 1.27)

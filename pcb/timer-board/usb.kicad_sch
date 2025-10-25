@@ -1945,12 +1945,6 @@
 		(uuid "c9ffdecc-64fc-4693-b447-86fd3cde5c56")
 	)
 	(junction
-		(at 160.02 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "edf8cefa-343e-4783-8d85-70e3f3c41a2b")
-	)
-	(junction
 		(at 125.73 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1971,7 +1965,7 @@
 		(uuid "b027d15e-658e-453a-9137-8724d2589059")
 	)
 	(bus_entry
-		(at 173.99 96.52)
+		(at 175.26 96.52)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -1980,7 +1974,7 @@
 		(uuid "8e601433-fbfc-40cd-b837-e25c8c3e2ca2")
 	)
 	(bus_entry
-		(at 173.99 93.98)
+		(at 175.26 93.98)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -2000,7 +1994,7 @@
 	)
 	(bus
 		(pts
-			(xy 176.53 101.6) (xy 173.99 99.06)
+			(xy 177.8 101.6) (xy 175.26 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2070,7 +2064,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 91.44) (xy 160.02 93.98)
+			(xy 160.02 91.44) (xy 160.02 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2087,6 +2081,16 @@
 			(type default)
 		)
 		(uuid "3628b4fa-658a-45e8-91ab-9ce324327e7a")
+	)
+	(wire
+		(pts
+			(xy 162.56 93.98) (xy 172.72 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40bd6c76-ec0d-48e1-bc93-7cb0a4c27720")
 	)
 	(wire
 		(pts
@@ -2140,16 +2144,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 91.44) (xy 171.45 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "680451dd-c980-4c0b-989c-1d783876bff4")
-	)
-	(wire
-		(pts
 			(xy 157.48 76.2) (xy 154.94 76.2)
 		)
 		(stroke
@@ -2200,16 +2194,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 93.98) (xy 160.02 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "947b928a-28a8-45b4-9b5c-9a4cccfe8ae0")
-	)
-	(wire
-		(pts
 			(xy 140.97 76.2) (xy 146.05 76.2)
 		)
 		(stroke
@@ -2237,16 +2221,6 @@
 			(type default)
 		)
 		(uuid "9f65df0e-1de6-404e-8ced-139598819e6c")
-	)
-	(wire
-		(pts
-			(xy 162.56 93.98) (xy 160.02 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0c7ea96-89e6-4c53-935f-b0b1efdaa159")
 	)
 	(wire
 		(pts
@@ -2280,7 +2254,7 @@
 	)
 	(bus
 		(pts
-			(xy 179.07 101.6) (xy 176.53 101.6)
+			(xy 180.34 101.6) (xy 177.8 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2300,7 +2274,7 @@
 	)
 	(bus
 		(pts
-			(xy 173.99 96.52) (xy 173.99 99.06)
+			(xy 175.26 96.52) (xy 175.26 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2310,7 +2284,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 93.98) (xy 160.02 93.98)
+			(xy 123.19 93.98) (xy 162.56 93.98)
 		)
 		(stroke
 			(width 0)
@@ -2368,9 +2342,19 @@
 		)
 		(uuid "f39d028a-8753-4fbc-a6c9-f1f9f14d38ca")
 	)
+	(wire
+		(pts
+			(xy 160.02 91.44) (xy 172.72 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3abb2cf-a560-4cd7-9e1f-58b8e70520bf")
+	)
 	(bus
 		(pts
-			(xy 173.99 93.98) (xy 173.99 96.52)
+			(xy 175.26 93.98) (xy 175.26 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2400,16 +2384,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 93.98) (xy 171.45 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f81bb44c-9eb3-4fde-ba67-eae53680b886")
-	)
-	(wire
-		(pts
 			(xy 130.81 121.92) (xy 125.73 121.92)
 		)
 		(stroke
@@ -2429,7 +2403,7 @@
 		(uuid "fcd5b462-66ac-4514-a7bc-f0552b6e847b")
 	)
 	(label "USB.D-"
-		(at 163.83 93.98 0)
+		(at 165.1 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2439,7 +2413,7 @@
 		(uuid "1fef47c4-37e2-4c62-9db6-55288acfa191")
 	)
 	(label "USB.D+"
-		(at 163.83 91.44 0)
+		(at 165.1 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2450,7 +2424,7 @@
 	)
 	(hierarchical_label "USB{USB}"
 		(shape bidirectional)
-		(at 179.07 101.6 0)
+		(at 180.34 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2469,6 +2443,53 @@
 			(justify left)
 		)
 		(uuid "b49a3e8c-46d6-45f2-a9ce-16797fe2a7d8")
+	)
+	(rule_area
+		(polyline
+			(pts
+				(xy 163.83 104.14) (xy 191.77 104.14) (xy 191.77 87.63) (xy 163.83 87.63)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+			)
+			(fill
+				(type none)
+			)
+			(uuid 2f374939-affa-4816-92e1-3180521ca6d5)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 191.77 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "116d6938-76dc-4ddd-a669-e7c2546c4c8f")
+		(property "Netclass" "USB_90Ohm_diff"
+			(at 191.0715 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Component Class" ""
+			(at -21.59 -5.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
 	)
 	(netclass_flag ""
 		(length 2.54)

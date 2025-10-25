@@ -503,7 +503,7 @@
         "line_style": 0,
         "name": "GND",
         "pcb_color": "rgb(0, 0, 255)",
-        "priority": 1,
+        "priority": 2,
         "schematic_color": "rgb(0, 0, 255)",
         "track_width": 0.2,
         "via_diameter": 0.5,
@@ -516,8 +516,23 @@
         "line_style": 0,
         "name": "PWR",
         "pcb_color": "rgb(255, 0, 0)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgb(255, 0, 0)",
+        "track_width": 0.2,
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
+        "wire_width": 10
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.12,
+        "diff_pair_gap": 0.12,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "name": "USB_90Ohm_diff",
+        "pcb_color": "rgb(0, 194, 0)",
+        "priority": 0,
+        "schematic_color": "rgb(0, 194, 0)",
         "track_width": 0.2,
         "via_diameter": 0.5,
         "via_drill": 0.3,
@@ -531,6 +546,15 @@
     "netclass_assignments": {
       "+3V3": [
         "PWR"
+      ],
+      "/MCU/USB.D+": [
+        "USB_90Ohm_diff"
+      ],
+      "/MCU/USB.D-": [
+        "USB_90Ohm_diff"
+      ],
+      "/MCU/USB{USB}": [
+        "USB_90Ohm_diff"
       ],
       "/Power/VBUS": [
         "PWR"

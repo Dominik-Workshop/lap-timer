@@ -663,6 +663,18 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "IR RECEIVER"
+		(exclude_from_sim no)
+		(at 140.97 67.31 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+			)
+		)
+		(uuid "462e3e13-ba44-4ed4-878b-7cb6cac19ef5")
+	)
 	(wire
 		(pts
 			(xy 148.59 95.25) (xy 153.67 95.25)

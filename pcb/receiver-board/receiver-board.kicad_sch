@@ -11,90 +11,153 @@
 		(comment 1 "Project author: <author>")
 	)
 	(lib_symbols
-		(symbol "Connector:Conn_01x03_Socket"
+		(symbol "DW-capacitors:C-1u-0402"
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J"
-				(at 0 5.08 0)
+			(property "Reference" "C"
+				(at 12.7 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(thickness 0.15)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Value" "Conn_01x03_Socket"
-				(at 0 -5.08 0)
+			(property "Value" "C-1u-0402"
+				(at 12.7 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(thickness 0.15)
 					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
+					(justify left bottom)
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
+			(property "Footprint" "DW-footprints:C_0402_1005Metric"
+				(at 12.7 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(thickness 0.15)
 					)
+					(justify left bottom)
 					(hide yes)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x03, script generated"
-				(at 0 0 0)
+			(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf"
+				(at 12.7 -7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(thickness 0.15)
 					)
+					(justify left bottom)
 					(hide yes)
 				)
 			)
-			(property "ki_locked" ""
-				(at 0 0 0)
+			(property "Description" "25V 1uF X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+				(at 12.7 -10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(thickness 0.15)
 					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
+					(justify left bottom)
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
+			(property "Manufacturer" "Samsung Electro-Mechanics"
+				(at 12.7 -12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(thickness 0.15)
 					)
+					(justify left bottom)
 					(hide yes)
 				)
 			)
-			(symbol "Conn_01x03_Socket_1_1"
+			(property "MPN" "CL05A105KA5NQNC"
+				(at 12.7 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C52923"
+				(at 12.7 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Val" "1u"
+				(at 12.7 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Tolerance" "10%"
+				(at 12.7 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Voltage" "25V"
+				(at 12.7 -25.4 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Dielectric" "X5R"
+				(at 12.7 -27.94 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(symbol "C-1u-0402_0_1"
 				(polyline
 					(pts
-						(xy -1.27 2.54) (xy -0.508 2.54)
+						(xy 2.032 -1.524) (xy 2.032 1.524)
 					)
 					(stroke
-						(width 0.1524)
+						(width 0.3048)
 						(type default)
 					)
 					(fill
@@ -103,68 +166,22 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 0) (xy -0.508 0)
+						(xy 3.048 -1.524) (xy 3.048 1.524)
 					)
 					(stroke
-						(width 0.1524)
+						(width 0.3302)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -1.27 -2.54) (xy -0.508 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 2.032)
-					(mid -0.5058 2.54)
-					(end 0 3.048)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -0.508)
-					(mid -0.5058 0)
-					(end 0 0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -3.048)
-					(mid -0.5058 -2.54)
-					(end 0 -2.032)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
+			)
+			(symbol "C-1u-0402_1_1"
 				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_1"
+					(at 0 0 0)
+					(length 2.032)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -180,9 +197,9 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_2"
+					(at 5.08 0 180)
+					(length 2.032)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -197,10 +214,313 @@
 						)
 					)
 				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_3"
+			)
+			(embedded_fonts no)
+		)
+		(symbol "DW-connectors:Jack_PJ-342"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 15.24 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "Jack_PJ-342"
+				(at 15.24 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "DW-footprints:Jack_PJ-342"
+				(at 15.24 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C668606.pdf"
+				(at 15.24 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "-30℃~+70℃ 3.5mm Headphone Jack 30V Gold 500mA SMD Audio Connectors RoHS"
+				(at 15.24 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "SHOU HAN"
+				(at 15.24 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "MPN" "PJ-342"
+				(at 15.24 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "LCSC" "C668606"
+				(at 15.24 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "CONNECTOR, JACK, HEADPHONE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Jack_PJ-342_0_1"
+				(rectangle
+					(start -8.89 -5.59)
+					(end -7.87 -9.4)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -2.54) (xy -4.06 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -10.16) (xy -3.56 -8.89)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -8.38 0) (xy -8.38 -5.59)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -6.1 -2.54) (xy -6.6 -3.56) (xy -7.11 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -3.81 -5.08) (xy -3.81 -2.54) (xy -3.56 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -7.62) (xy -3.81 -7.62) (xy -3.81 -10.16) (xy -4.06 -8.89)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -12.7) (xy -7.37 -12.7) (xy -7.87 -11.68) (xy -8.38 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -10.16) (xy -5.08 -10.16) (xy -5.59 -9.14) (xy -6.1 -10.16)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -2.54 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -7.62 180)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -10.16 180)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -12.7 180)
+					(length 5.08)
+					(name "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -871,8 +1191,8 @@
 		)
 	)
 	(rectangle
-		(start 92.71 44.45)
-		(end 156.21 105.41)
+		(start 93.98 46.99)
+		(end 161.29 107.95)
 		(stroke
 			(width 0)
 			(type default)
@@ -882,55 +1202,55 @@
 		)
 		(uuid ad0da89c-98c4-41af-beaa-d5bf2b953204)
 	)
-	(wire
-		(pts
-			(xy 104.14 85.09) (xy 106.68 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "042de14b-dbfd-4d06-8a47-2b167753f1a4")
+	(junction
+		(at 127 90.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "da489533-5127-48fb-870f-0698a0d4355c")
+	)
+	(junction
+		(at 116.84 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e2afdddc-c500-40f0-8569-da3b08607b7c")
+	)
+	(no_connect
+		(at 116.84 85.09)
+		(uuid "00dbe31b-a305-4f39-9d91-b264a6e8934c")
+	)
+	(no_connect
+		(at 116.84 87.63)
+		(uuid "a92ca93a-0a77-466b-bc39-ff9e4995a2d7")
 	)
 	(wire
 		(pts
-			(xy 104.14 90.17) (xy 104.14 85.09)
+			(xy 127 93.98) (xy 127 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "057e4f2e-fe8d-45e3-b3c9-08f25be642d7")
+		(uuid "1e992bb0-2959-440d-a945-617853f298ca")
 	)
 	(wire
 		(pts
-			(xy 106.68 97.79) (xy 106.68 90.17)
+			(xy 127 90.17) (xy 129.54 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0f36d12c-d9ab-4dfc-9728-5cca4e6b3857")
+		(uuid "20b9efe7-6180-4315-a770-cea9747a0a4d")
 	)
 	(wire
 		(pts
-			(xy 101.6 92.71) (xy 101.6 90.17)
+			(xy 116.84 92.71) (xy 116.84 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15c9f138-c609-4f73-993c-ad25fdb8ae30")
-	)
-	(wire
-		(pts
-			(xy 119.38 97.79) (xy 106.68 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16d43aef-d448-41c6-bd2d-56635a9db7e5")
+		(uuid "23eda6ea-1532-4a21-bf44-14f69230cbc0")
 	)
 	(wire
 		(pts
@@ -944,23 +1264,33 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 85.09) (xy 101.6 85.09)
+			(xy 127 99.06) (xy 127 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5b0ecdcb-cdc0-4248-9a6c-f3f5ed8b5667")
+		(uuid "5adbc018-27b0-44cf-b7cb-742b24de1867")
 	)
 	(wire
 		(pts
-			(xy 99.06 90.17) (xy 99.06 85.09)
+			(xy 116.84 95.25) (xy 116.84 97.79)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6c55781f-98f8-441b-9bcf-dd1d0b601269")
+		(uuid "5cca5ba6-15f4-46ee-bd9f-e8a34110fc8b")
+	)
+	(wire
+		(pts
+			(xy 116.84 82.55) (xy 134.62 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7196e8bb-3e60-456d-adc8-1553ad111c1a")
 	)
 	(wire
 		(pts
@@ -974,63 +1304,33 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 74.93) (xy 99.06 82.55)
+			(xy 116.84 80.01) (xy 120.65 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7b142ab3-ae21-4eb8-89c3-187eba7ca96f")
+		(uuid "87930538-44d6-4042-afe7-3acf71abf9b5")
 	)
 	(wire
 		(pts
-			(xy 101.6 90.17) (xy 99.06 90.17)
+			(xy 116.84 90.17) (xy 127 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7f65a8f9-14cb-4dec-a1d5-2e713c84ea54")
+		(uuid "a76f0133-8b0e-47bd-997d-5e7167b37a59")
 	)
 	(wire
 		(pts
-			(xy 101.6 85.09) (xy 101.6 87.63)
+			(xy 120.65 95.25) (xy 116.84 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "939d6105-c0e2-45f8-a7e1-765a1b822ce1")
-	)
-	(wire
-		(pts
-			(xy 106.68 90.17) (xy 104.14 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94bffd16-7b55-4c97-a6df-6c7e6baef35c")
-	)
-	(wire
-		(pts
-			(xy 99.06 82.55) (xy 106.68 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "994d9d94-5873-4aad-8623-2d8889c83dfc")
-	)
-	(wire
-		(pts
-			(xy 101.6 87.63) (xy 106.68 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4911277-7ccf-4267-b2ae-c8123d883d11")
+		(uuid "b47183f3-2b1d-43a7-a987-2051ab7bec1f")
 	)
 	(wire
 		(pts
@@ -1062,16 +1362,26 @@
 		)
 		(uuid "ef0a3293-097c-4cbf-82e7-69825237c28b")
 	)
+	(wire
+		(pts
+			(xy 120.65 80.01) (xy 120.65 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef59be28-709a-484f-b4a3-33e371c37d1d")
+	)
 	(hierarchical_label "GATE_TRIGGER2"
 		(shape output)
-		(at 119.38 97.79 0)
+		(at 134.62 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "5a1894c8-9823-4df8-8133-0eb18c2e7b0e")
+		(uuid "a1d19fde-0ee0-42ce-92e8-fbd98ea9f7a5")
 	)
 	(hierarchical_label "GATE_TRIGGER2"
 		(shape output)
@@ -1085,37 +1395,16 @@
 		(uuid "f0069c16-c662-4b00-8539-4358095c2385")
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x03_Socket")
-		(at 111.76 85.09 0)
+		(lib_id "DW-power-symbols:GND")
+		(at 127 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0ea787ee-9bee-4d05-aea0-42299e7aa09d")
-		(property "Reference" "J1"
-			(at 113.03 83.8199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Value" "Conn_01x03_Socket"
-			(at 113.03 86.3599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ-3523-SMT_Horizontal"
-			(at 111.76 85.09 0)
+		(uuid "0b18f9c5-9ef5-40c4-a106-1ea235e4c2d3")
+		(property "Reference" "#PWR02"
+			(at 127 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1123,8 +1412,16 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 111.76 85.09 0)
+		(property "Value" "GND"
+			(at 127 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1132,8 +1429,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 111.76 85.09 0)
+		(property "Datasheet" ""
+			(at 127 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 127 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1142,18 +1448,287 @@
 			)
 		)
 		(pin "1"
-			(uuid "5eacae9b-8ae0-418a-afca-f3fb870d70d9")
-		)
-		(pin "2"
-			(uuid "09490e9a-bed0-424d-ae6b-d814a0e21973")
-		)
-		(pin "3"
-			(uuid "b5b4c622-8960-4692-8c78-c7e68c0cbf36")
+			(uuid "c02c5433-fd5f-4038-a5e8-d40d066fac8d")
 		)
 		(instances
 			(project "receiver-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
-					(reference "J1")
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-capacitors:C-1u-0402")
+		(at 127 93.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0b66f097-2569-43f4-8b84-63df539f22e6")
+		(property "Reference" "C6"
+			(at 128.778 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C-1u-0402"
+			(at 124.46 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 121.92 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf"
+			(at 119.38 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "25V 1uF X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 116.84 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 114.3 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 111.76 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 109.22 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Val" "1u"
+			(at 128.778 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 104.14 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 101.6 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Dielectric" "X5R"
+			(at 99.06 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "708ef671-e814-4ba2-9e80-6f74ef6745b5")
+		)
+		(pin "2"
+			(uuid "335bbafa-75f5-45b5-b089-08a6af3d12fd")
+		)
+		(instances
+			(project "receiver-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-connectors:Jack_PJ-342")
+		(at 113.03 80.01 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56d24125-e0f3-4740-a264-8c30f13eac51")
+		(property "Reference" "J2"
+			(at 108.585 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "Jack_PJ-342"
+			(at 128.27 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_JAE:Jack_PJ-342"
+			(at 128.27 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C668606.pdf"
+			(at 128.27 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "-30℃~+70℃ 3.5mm Headphone Jack 30V Gold 500mA SMD Audio Connectors RoHS"
+			(at 128.27 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SHOU HAN"
+			(at 128.27 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "PJ-342"
+			(at 108.585 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C668606"
+			(at 128.27 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "11dd9838-ff15-420e-98cb-931e0fdf6da9")
+		)
+		(pin "4"
+			(uuid "b8d7a7af-80b4-4c58-baa5-abf0e7cf794b")
+		)
+		(pin "5"
+			(uuid "0ea0b2af-0785-4901-8332-20d2c07e68fa")
+		)
+		(pin "3"
+			(uuid "24bcc384-99b2-419f-aa45-2207d023ad12")
+		)
+		(pin "6"
+			(uuid "0e21af24-8cf3-418f-bcf2-667412b3e671")
+		)
+		(pin "7"
+			(uuid "fc9e2fe9-43e1-4658-bf8b-2270bb31da00")
+		)
+		(instances
+			(project "receiver-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -1226,15 +1801,15 @@
 	)
 	(symbol
 		(lib_id "DW-power-symbols:GND")
-		(at 101.6 92.71 0)
+		(at 116.84 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b962a6ec-ba61-46fe-a881-1ad0e14a83bf")
-		(property "Reference" "#PWR03"
-			(at 101.6 99.06 0)
+		(uuid "a7f2f527-00ec-4626-bbd6-b0a75f279d6b")
+		(property "Reference" "#PWR07"
+			(at 116.84 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1243,7 +1818,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 101.6 96.52 0)
+			(at 116.84 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1251,7 +1826,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 92.71 0)
+			(at 116.84 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1260,7 +1835,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 92.71 0)
+			(at 116.84 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1269,7 +1844,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 101.6 92.71 0)
+			(at 116.84 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1278,12 +1853,77 @@
 			)
 		)
 		(pin "1"
-			(uuid "2461a04c-95eb-43e6-84d5-67e4185d8034")
+			(uuid "0080c17f-3305-466e-b70a-61d95341369d")
 		)
 		(instances
 			(project "receiver-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
-					(reference "#PWR03")
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:+3V3")
+		(at 129.54 90.17 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b3735953-0a6d-458d-bb3a-3adae181fe43")
+		(property "Reference" "#PWR05"
+			(at 125.73 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 133.35 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 129.54 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1140a9dc-1f3f-4ec7-9121-ab439565cbc1")
+		)
+		(instances
+			(project "receiver-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -1349,71 +1989,6 @@
 			(project "receiver-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
 					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "DW-power-symbols:+3V3")
-		(at 99.06 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cee39063-18dc-46d7-9902-3618ac7cd9fd")
-		(property "Reference" "#PWR02"
-			(at 99.06 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 99.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 99.06 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 99.06 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 99.06 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b1da5d5a-7320-48b1-b361-9ffbfb3112da")
-		)
-		(instances
-			(project "receiver-board"
-				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
-					(reference "#PWR02")
 					(unit 1)
 				)
 			)

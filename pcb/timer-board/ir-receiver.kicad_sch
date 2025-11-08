@@ -11,6 +11,327 @@
 		(comment 1 "Project author: Dominik Pluta")
 	)
 	(lib_symbols
+		(symbol "DW-connectors:Jack_PJ-342"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 15.24 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "Jack_PJ-342"
+				(at 15.24 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "DW-footprints:Jack_PJ-342"
+				(at 15.24 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C668606.pdf"
+				(at 15.24 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "-30℃~+70℃ 3.5mm Headphone Jack 30V Gold 500mA SMD Audio Connectors RoHS"
+				(at 15.24 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "SHOU HAN"
+				(at 15.24 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "MPN" "PJ-342"
+				(at 15.24 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "LCSC" "C668606"
+				(at 15.24 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "CONNECTOR, JACK, HEADPHONE"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Jack_PJ-342_0_1"
+				(rectangle
+					(start -8.89 -5.59)
+					(end -7.87 -9.4)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -2.54) (xy -4.06 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -10.16) (xy -3.56 -8.89)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -8.38 0) (xy -8.38 -5.59)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -6.1 -2.54) (xy -6.6 -3.56) (xy -7.11 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -3.81 -5.08) (xy -3.81 -2.54) (xy -3.56 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -7.62) (xy -3.81 -7.62) (xy -3.81 -10.16) (xy -4.06 -8.89)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -12.7) (xy -7.37 -12.7) (xy -7.87 -11.68) (xy -8.38 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -10.16) (xy -5.08 -10.16) (xy -5.59 -9.14) (xy -6.1 -10.16)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 0 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -2.54 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -5.08 180)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -7.62 180)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -10.16 180)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -12.7 180)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "DW-power-symbols:+3V3"
 			(power)
 			(pin_numbers
@@ -675,6 +996,20 @@
 		)
 		(uuid "462e3e13-ba44-4ed4-878b-7cb6cac19ef5")
 	)
+	(junction
+		(at 143.51 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0bcd0ac3-ec63-448c-8df3-a3216d039f93")
+	)
+	(no_connect
+		(at 140.97 123.19)
+		(uuid "55ad1c56-bb2c-43a7-937f-38f68d99bd0a")
+	)
+	(no_connect
+		(at 140.97 125.73)
+		(uuid "ebb1859a-45b1-4684-ab09-88494bb9a25e")
+	)
 	(wire
 		(pts
 			(xy 148.59 95.25) (xy 153.67 95.25)
@@ -684,6 +1019,16 @@
 			(type default)
 		)
 		(uuid "24c72aac-6e7f-4353-8757-24b615714a08")
+	)
+	(wire
+		(pts
+			(xy 146.05 115.57) (xy 146.05 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e1f0a60-91fb-4a09-8bc3-68f64e450a7a")
 	)
 	(wire
 		(pts
@@ -697,6 +1042,26 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 118.11) (xy 143.51 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44444879-ab30-4eca-a735-56744096f3c4")
+	)
+	(wire
+		(pts
+			(xy 140.97 128.27) (xy 146.05 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "508cbd4b-9d00-4d79-aab0-ff3668da4086")
+	)
+	(wire
+		(pts
 			(xy 151.13 100.33) (xy 148.59 100.33)
 		)
 		(stroke
@@ -704,6 +1069,26 @@
 			(type default)
 		)
 		(uuid "63957e29-dc24-4d7a-ab9b-9ff1aeb9a700")
+	)
+	(wire
+		(pts
+			(xy 140.97 120.65) (xy 154.94 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c89948b-24db-4a3c-94d7-71c576617b39")
+	)
+	(wire
+		(pts
+			(xy 143.51 133.35) (xy 143.51 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ce9dc75-56c4-49b5-aae2-6b76814fce9a")
 	)
 	(wire
 		(pts
@@ -725,7 +1110,38 @@
 		)
 		(uuid "b60695e0-0c83-4edb-b011-02e3a80a7d4a")
 	)
-	(hierarchical_label "GATE_TRIGGER"
+	(wire
+		(pts
+			(xy 143.51 118.11) (xy 143.51 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6f1b6ec-930a-486a-b71e-448a94b84c6c")
+	)
+	(wire
+		(pts
+			(xy 140.97 130.81) (xy 143.51 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8aa3d8b-206e-473a-a4d4-c86b284b6a48")
+	)
+	(hierarchical_label "GATE_TRIGGER_2"
+		(shape output)
+		(at 154.94 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1606973c-1859-4b3b-867d-b59fd43a8e72")
+	)
+	(hierarchical_label "GATE_TRIGGER_1"
 		(shape output)
 		(at 153.67 95.25 0)
 		(effects
@@ -735,6 +1151,127 @@
 			(justify left)
 		)
 		(uuid "cedf4b20-37a4-45ca-8a59-dee4e26c816f")
+	)
+	(symbol
+		(lib_id "DW-connectors:Jack_PJ-342")
+		(at 137.16 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56d24125-e0f3-4740-a264-8c30f13eac51")
+		(property "Reference" "J2"
+			(at 132.715 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "Jack_PJ-342"
+			(at 152.4 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:Jack_PJ-342"
+			(at 152.4 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C668606.pdf"
+			(at 152.4 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "-30℃~+70℃ 3.5mm Headphone Jack 30V Gold 500mA SMD Audio Connectors RoHS"
+			(at 152.4 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "SHOU HAN"
+			(at 152.4 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "PJ-342"
+			(at 132.715 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C668606"
+			(at 152.4 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "11dd9838-ff15-420e-98cb-931e0fdf6da9")
+		)
+		(pin "4"
+			(uuid "b8d7a7af-80b4-4c58-baa5-abf0e7cf794b")
+		)
+		(pin "5"
+			(uuid "0ea0b2af-0785-4901-8332-20d2c07e68fa")
+		)
+		(pin "3"
+			(uuid "24bcc384-99b2-419f-aa45-2207d023ad12")
+		)
+		(pin "6"
+			(uuid "0e21af24-8cf3-418f-bcf2-667412b3e671")
+		)
+		(pin "7"
+			(uuid "fc9e2fe9-43e1-4658-bf8b-2270bb31da00")
+		)
+		(instances
+			(project ""
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "DW-power-symbols:+3V3")
@@ -861,6 +1398,136 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:GND")
+		(at 143.51 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d177421a-e54c-4849-9b8f-873a7889448a")
+		(property "Reference" "#PWR010"
+			(at 143.51 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 143.51 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 143.51 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 143.51 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 143.51 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a50da47e-957b-4b4d-8393-2f49f9375cb4")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:+3V3")
+		(at 146.05 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee11252d-b2ca-46ae-a0dd-11866e556efc")
+		(property "Reference" "#PWR039"
+			(at 146.05 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 146.05 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 146.05 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc413db2-4bc2-4926-bf16-b7ce65e9981c")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)

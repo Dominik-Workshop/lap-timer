@@ -934,7 +934,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 71.12) (xy 130.81 71.12)
+			(xy 133.35 71.12) (xy 124.46 71.12)
 		)
 		(stroke
 			(width 0)
@@ -1034,7 +1034,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 66.04) (xy 135.89 66.04)
+			(xy 124.46 66.04) (xy 135.89 66.04)
 		)
 		(stroke
 			(width 0)
@@ -1054,7 +1054,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 60.96) (xy 133.35 60.96)
+			(xy 124.46 60.96) (xy 133.35 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1101,6 +1101,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Value" "Conn_01x03_Socket"
@@ -1110,9 +1111,10 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_1.00mm:PinSocket_1x03_P1.00mm_Vertical"
+		(property "Footprint" "Connector_Audio:Jack_3.5mm_CUI_SJ-3523-SMT_Horizontal"
 			(at 111.76 85.09 0)
 			(effects
 				(font
@@ -1419,7 +1421,7 @@
 	)
 	(symbol
 		(lib_id "Sensor_Proximity:TSSP58038")
-		(at 120.65 66.04 0)
+		(at 114.3 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1428,7 +1430,7 @@
 		(fields_autoplaced yes)
 		(uuid "f33d7a34-df11-471d-870d-cad6f34ff90f")
 		(property "Reference" "U2"
-			(at 118.915 54.61 0)
+			(at 112.565 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1436,7 +1438,7 @@
 			)
 		)
 		(property "Value" "TSSP58038"
-			(at 118.915 57.15 0)
+			(at 112.565 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1444,7 +1446,7 @@
 			)
 		)
 		(property "Footprint" "OptoDevice:Vishay_MINICAST-3Pin"
-			(at 119.38 75.565 0)
+			(at 113.03 75.565 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1453,7 +1455,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.vishay.com/docs/82476/tssp58p38.pdf"
-			(at 137.16 58.42 0)
+			(at 130.81 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1462,7 +1464,7 @@
 			)
 		)
 		(property "Description" "IR Detector for Mid Range Proximity Sensor"
-			(at 120.65 66.04 0)
+			(at 114.3 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)

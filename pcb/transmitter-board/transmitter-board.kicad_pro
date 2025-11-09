@@ -528,7 +528,11 @@
       "version": 4
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "/IN+": [
+        "PWR"
+      ]
+    },
     "netclass_patterns": [
       {
         "netclass": "GND",

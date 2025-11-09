@@ -45,10 +45,10 @@ This project contains 3 custom PCBs:
   <img src="images/renders/transmitter-board.png" width=50% alt="Transmitter board render"> 
 </p> -->
 
-- [**Reveiver board**](/pcb/reveiver-board/): (used only in 2-gate mode) detects the IR signal and triggers the timer
+- [**Receiver board**](/pcb/receiver-board/): (used only in 2-gate mode) detects the IR signal and triggers the timer
 
 <!-- <p align="center">
-  <img src="images/renders/reveiver-board.png" width=50% alt="Reveiver board render"> 
+  <img src="images/renders/receiver-board.png" width=50% alt="Receiver board render"> 
 </p> -->
 
 ## Mechanical
@@ -58,3 +58,12 @@ Each board has a custom-designed **3D printed enclosure**.
 ## Used Tools
 
 <img src="img/logos/KiCad.png" align="center" height="64">
+
+## Authors
+
+- [**Dominik Pluta**](https://github.com/Dominik-Workshop):
+  - **Responsibility**: [**Timer board**](/pcb/timer-board/)
+- [**Mateusz Gwioździk**](https://github.com/Nojilim):
+  - **Responsibility**: [**Transmitter board**](/pcb/transmitter-board/)
+- [**Radek Mierzwa**](https://github.com/Radek278):
+  - **Responsibility**: [**Receiver board**](/pcb/receiver-board/)

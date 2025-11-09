@@ -11,6 +11,212 @@
 		(comment 1 "Project author: Dominik Pluta")
 	)
 	(lib_symbols
+		(symbol "DW-capacitors:C-1u-0402"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 12.7 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "C-1u-0402"
+				(at 12.7 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Footprint" "DW-footprints:C_0402_1005Metric"
+				(at 12.7 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf"
+				(at 12.7 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Description" "25V 1uF X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+				(at 12.7 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "Samsung Electro-Mechanics"
+				(at 12.7 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "MPN" "CL05A105KA5NQNC"
+				(at 12.7 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C52923"
+				(at 12.7 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Val" "1u"
+				(at 12.7 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Tolerance" "10%"
+				(at 12.7 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Voltage" "25V"
+				(at 12.7 -25.4 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(property "Dielectric" "X5R"
+				(at 12.7 -27.94 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.15)
+					)
+					(justify left bottom)
+					(hide yes)
+				)
+			)
+			(symbol "C-1u-0402_0_1"
+				(polyline
+					(pts
+						(xy 2.032 -1.524) (xy 2.032 1.524)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -1.524) (xy 3.048 1.524)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C-1u-0402_1_1"
+				(pin passive line
+					(at 0 0 0)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "DW-connectors:Jack_PJ-342"
 			(pin_names
 				(hide yes)
@@ -1002,6 +1208,12 @@
 		(color 0 0 0 0)
 		(uuid "0bcd0ac3-ec63-448c-8df3-a3216d039f93")
 	)
+	(junction
+		(at 151.13 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "257f875f-04a2-4d18-be16-d7dda5249e54")
+	)
 	(no_connect
 		(at 140.97 123.19)
 		(uuid "55ad1c56-bb2c-43a7-937f-38f68d99bd0a")
@@ -1012,7 +1224,17 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 95.25) (xy 153.67 95.25)
+			(xy 151.13 74.93) (xy 151.13 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a1ed5e4-d0e8-4dba-8156-6c7d2a7bbbb0")
+	)
+	(wire
+		(pts
+			(xy 148.59 95.25) (xy 167.64 95.25)
 		)
 		(stroke
 			(width 0)
@@ -1049,6 +1271,16 @@
 			(type default)
 		)
 		(uuid "44444879-ab30-4eca-a735-56744096f3c4")
+	)
+	(wire
+		(pts
+			(xy 154.94 77.47) (xy 151.13 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "497f6105-d08a-431d-a95a-42444ed6f151")
 	)
 	(wire
 		(pts
@@ -1102,13 +1334,13 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 90.17) (xy 151.13 86.36)
+			(xy 151.13 77.47) (xy 151.13 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b60695e0-0c83-4edb-b011-02e3a80a7d4a")
+		(uuid "a0d578aa-feac-471f-95ee-6ddcc2556d2e")
 	)
 	(wire
 		(pts
@@ -1119,6 +1351,26 @@
 			(type default)
 		)
 		(uuid "b6f1b6ec-930a-486a-b71e-448a94b84c6c")
+	)
+	(wire
+		(pts
+			(xy 154.94 85.09) (xy 154.94 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d976d726-9e0f-4d5f-82c3-ec1082471c1a")
+	)
+	(wire
+		(pts
+			(xy 154.94 77.47) (xy 154.94 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df6768af-5c6a-4e21-8e5c-362a044dbc66")
 	)
 	(wire
 		(pts
@@ -1143,7 +1395,7 @@
 	)
 	(hierarchical_label "GATE_TRIGGER_1"
 		(shape output)
-		(at 153.67 95.25 0)
+		(at 167.64 95.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1274,8 +1526,163 @@
 		)
 	)
 	(symbol
+		(lib_id "DW-capacitors:C-1u-0402")
+		(at 154.94 85.09 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8c4b5349-de3b-4f37-93cb-1f4eafded9e0")
+		(property "Reference" "C17"
+			(at 157.48 81.2736 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "C-1u-0402"
+			(at 157.48 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:C_0402_1005Metric"
+			(at 160.02 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2304140030_Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf"
+			(at 162.56 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "25V 1uF X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 165.1 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung Electro-Mechanics"
+			(at 167.64 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 170.18 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 172.72 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Val" "1u"
+			(at 157.48 83.8136 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify right)
+			)
+		)
+		(property "Tolerance" "10%"
+			(at 177.8 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Voltage" "25V"
+			(at 180.34 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Dielectric" "X5R"
+			(at 182.88 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "aa6a9201-33ac-4d4b-965e-ddf9658763c6")
+		)
+		(pin "1"
+			(uuid "c6c5a459-3442-4374-926d-235c10f679a2")
+		)
+		(instances
+			(project ""
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "DW-power-symbols:+3V3")
-		(at 151.13 86.36 0)
+		(at 151.13 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1283,7 +1690,7 @@
 		(dnp no)
 		(uuid "96bc86ce-bcec-445f-996b-9b2daa0b9285")
 		(property "Reference" "#PWR06"
-			(at 151.13 90.17 0)
+			(at 151.13 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1292,7 +1699,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 151.13 82.55 0)
+			(at 151.13 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1300,7 +1707,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 151.13 86.36 0)
+			(at 151.13 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1309,7 +1716,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 151.13 86.36 0)
+			(at 151.13 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1318,7 +1725,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 151.13 86.36 0)
+			(at 151.13 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1599,6 +2006,71 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:GND")
+		(at 154.94 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa8ba2e2-f01b-414f-8355-7877df9bea63")
+		(property "Reference" "#PWR040"
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 154.94 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c3ce5c12-c74a-4270-9a6b-daebb2411393")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/4d16c651-3853-444b-ab87-1e1c14d0b71f"
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)

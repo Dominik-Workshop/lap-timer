@@ -3866,6 +3866,12 @@
 		(uuid "4a2b65ec-f818-40cd-af75-33dd373c396e")
 	)
 	(junction
+		(at 109.22 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d456489-a894-4fa6-9d3b-27cbdb69dacb")
+	)
+	(junction
 		(at 33.02 184.15)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3882,6 +3888,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7dfba7c9-3627-4553-8f33-11100c8c4942")
+	)
+	(junction
+		(at 105.41 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8162a30c-d2c1-4817-a8db-82c2de53e80a")
 	)
 	(junction
 		(at 57.15 171.45)
@@ -3948,6 +3960,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c31ba6c5-ca48-4b6d-a256-cbab3629c7b1")
+	)
+	(junction
+		(at 105.41 120.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d2b2b890-4652-4ba0-9f42-52f9222fdd07")
 	)
 	(junction
 		(at 170.18 63.5)
@@ -4125,7 +4143,7 @@
 		(uuid "2281948e-000e-4ee6-bea2-dd645007d28f")
 	)
 	(bus_entry
-		(at 100.33 115.57)
+		(at 100.33 123.19)
 		(size 2.54 -2.54)
 		(stroke
 			(width 0)
@@ -4143,13 +4161,23 @@
 		(uuid "a36097d3-e7a4-425f-ad75-e69222e44a92")
 	)
 	(bus_entry
-		(at 100.33 118.11)
+		(at 100.33 125.73)
 		(size 2.54 -2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f1578736-60a5-4cf5-98a6-a741b6b7d8c3")
+	)
+	(wire
+		(pts
+			(xy 105.41 107.95) (xy 105.41 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04789ea1-3573-42b4-922f-e51666086131")
 	)
 	(wire
 		(pts
@@ -4253,6 +4281,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 123.19) (xy 119.38 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "200ac3ff-1b8e-4d4a-8fb6-c37829056cf4")
+	)
+	(wire
+		(pts
 			(xy 82.55 171.45) (xy 85.09 171.45)
 		)
 		(stroke
@@ -4320,6 +4358,16 @@
 			(type default)
 		)
 		(uuid "2d60cefb-a17c-437f-a384-7a248f0b36e0")
+	)
+	(wire
+		(pts
+			(xy 105.41 118.11) (xy 105.41 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d847fe2-d925-4d3f-9bd0-d2b15c1deb86")
 	)
 	(wire
 		(pts
@@ -4433,7 +4481,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 113.03) (xy 114.3 113.03)
+			(xy 102.87 120.65) (xy 105.41 120.65)
 		)
 		(stroke
 			(width 0)
@@ -4533,7 +4581,7 @@
 	)
 	(bus
 		(pts
-			(xy 97.79 123.19) (xy 100.33 120.65)
+			(xy 97.79 130.81) (xy 100.33 128.27)
 		)
 		(stroke
 			(width 0)
@@ -4573,7 +4621,7 @@
 	)
 	(bus
 		(pts
-			(xy 100.33 115.57) (xy 100.33 118.11)
+			(xy 100.33 123.19) (xy 100.33 125.73)
 		)
 		(stroke
 			(width 0)
@@ -4643,6 +4691,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 113.03) (xy 109.22 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "650d1b04-0552-4b09-80b9-70caf2f14bce")
+	)
+	(wire
+		(pts
 			(xy 57.15 171.45) (xy 59.69 171.45)
 		)
 		(stroke
@@ -4650,6 +4708,26 @@
 			(type default)
 		)
 		(uuid "69ea0be1-5adb-4900-814a-a6cbdab258e4")
+	)
+	(wire
+		(pts
+			(xy 105.41 110.49) (xy 105.41 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bbe2aeb-f712-48d2-af47-f31ae6b9f667")
+	)
+	(wire
+		(pts
+			(xy 105.41 110.49) (xy 109.22 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c0b2bf6-e263-410b-8c72-e9c9fffcf319")
 	)
 	(wire
 		(pts
@@ -4713,6 +4791,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 118.11) (xy 109.22 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8430575f-f950-43c6-b031-162024514c90")
+	)
+	(wire
+		(pts
 			(xy 167.64 129.54) (xy 180.34 129.54)
 		)
 		(stroke
@@ -4733,7 +4821,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 115.57) (xy 114.3 115.57)
+			(xy 102.87 123.19) (xy 109.22 123.19)
 		)
 		(stroke
 			(width 0)
@@ -4913,7 +5001,7 @@
 	)
 	(bus
 		(pts
-			(xy 100.33 118.11) (xy 100.33 120.65)
+			(xy 100.33 125.73) (xy 100.33 128.27)
 		)
 		(stroke
 			(width 0)
@@ -4933,7 +5021,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 93.98) (xy 173.99 93.98)
+			(xy 167.64 93.98) (xy 170.18 93.98)
 		)
 		(stroke
 			(width 0)
@@ -5143,6 +5231,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 120.65) (xy 119.38 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6a76951-82d5-4ec8-bab3-08848680f123")
+	)
+	(wire
+		(pts
 			(xy 184.15 78.74) (xy 181.61 78.74)
 		)
 		(stroke
@@ -5273,7 +5371,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 116.84) (xy 171.45 116.84)
+			(xy 167.64 116.84) (xy 170.18 116.84)
 		)
 		(stroke
 			(width 0)
@@ -5283,7 +5381,7 @@
 	)
 	(bus
 		(pts
-			(xy 95.25 123.19) (xy 97.79 123.19)
+			(xy 95.25 130.81) (xy 97.79 130.81)
 		)
 		(stroke
 			(width 0)
@@ -5312,7 +5410,7 @@
 		(uuid "000d7dfc-71c5-4367-841a-8335b9c51f7a")
 	)
 	(label "I2C.SCL"
-		(at 114.3 115.57 180)
+		(at 119.38 123.19 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5442,7 +5540,7 @@
 		(uuid "ac18deb4-2f55-47f8-9233-5ce60f238555")
 	)
 	(label "I2C.SDA"
-		(at 114.3 113.03 180)
+		(at 119.38 120.65 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5523,7 +5621,7 @@
 	)
 	(hierarchical_label "GATE_TRIGGER_2"
 		(shape input)
-		(at 173.99 93.98 0)
+		(at 170.18 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5534,7 +5632,7 @@
 	)
 	(hierarchical_label "GATE_TRIGGER_1"
 		(shape input)
-		(at 171.45 116.84 0)
+		(at 170.18 116.84 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5545,7 +5643,7 @@
 	)
 	(hierarchical_label "I2C{I2C}"
 		(shape bidirectional)
-		(at 95.25 123.19 180)
+		(at 95.25 130.81 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6722,6 +6820,138 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
 					(reference "C14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-resistors:R-5k1-0402")
+		(at 109.22 118.11 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "48df4626-6e80-4f22-a6f1-d5231930a7dd")
+		(property "Reference" "R12"
+			(at 110.49 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "R-5k1-0402"
+			(at 111.76 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:R_0402_1005Metric"
+			(at 114.3 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411221127_UNI-ROYAL-0402WGF5101TCE_C25905.pdf"
+			(at 116.84 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "62.5mW Thick Film Resistor 50V ±100ppm/℃ ±1% 5.1kΩ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 119.38 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 121.92 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0402WGF5101TCE"
+			(at 124.46 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 127 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Val" "5k1"
+			(at 110.49 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify right)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 132.08 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6b65b3b8-0e9c-4daa-ab0b-3e89ed7a8605")
+		)
+		(pin "1"
+			(uuid "3555a0bb-f236-47b0-83eb-6d7cbfe3bee4")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -7932,6 +8162,71 @@
 		)
 	)
 	(symbol
+		(lib_id "DW-power-symbols:+3V3")
+		(at 105.41 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "74541ce5-a462-4b7c-aed7-76c89e7f1d27")
+		(property "Reference" "#PWR041"
+			(at 105.41 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 105.41 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 105.41 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 105.41 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4a38a578-f8a8-4b61-9b61-dcb5d68f70eb")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "#PWR041")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "DW-power-symbols:GND")
 		(at 205.74 57.15 0)
 		(unit 1)
@@ -7991,6 +8286,139 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-resistors:R-5k1-0402")
+		(at 105.41 118.11 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8588095f-65a2-4e4d-af6d-4851e5841bfa")
+		(property "Reference" "R11"
+			(at 104.14 114.3 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "R-5k1-0402"
+			(at 102.87 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "DW-footprints:R_0402_1005Metric"
+			(at 100.33 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/datasheet/lcsc_datasheet_2411221127_UNI-ROYAL-0402WGF5101TCE_C25905.pdf"
+			(at 97.79 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Description" "62.5mW Thick Film Resistor 50V ±100ppm/℃ ±1% 5.1kΩ 0402 Chip Resistor - Surface Mount ROHS"
+			(at 95.25 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL(Uniroyal Elec)"
+			(at 92.71 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0402WGF5101TCE"
+			(at 90.17 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25905"
+			(at 87.63 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(property "Val" "5k1"
+			(at 104.14 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify right)
+			)
+		)
+		(property "Tolerance" "1%"
+			(at 82.55 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify left bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "33a7dcc5-afac-447d-af8b-fff0d05c3f7b")
+		)
+		(pin "1"
+			(uuid "a26f9c58-33e4-46b9-8c98-1047e13e0f44")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/2f50cfc6-2bbb-4cb9-83db-0430d85aa740"
+					(reference "R11")
 					(unit 1)
 				)
 			)

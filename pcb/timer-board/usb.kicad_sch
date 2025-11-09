@@ -2414,6 +2414,16 @@
 		)
 		(uuid "fcd5b462-66ac-4514-a7bc-f0552b6e847b")
 	)
+	(wire
+		(pts
+			(xy 179.07 123.19) (xy 179.07 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcf68cd1-9b85-4e5b-b5f6-bdb0fadaeeab")
+	)
 	(label "USB.D-"
 		(at 165.1 95.25 0)
 		(effects
@@ -2534,6 +2544,72 @@
 	)
 	(symbol
 		(lib_id "DW-power-symbols:GND")
+		(at 179.07 125.73 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "21aab976-67cf-49df-a01e-1d6d71f6e750")
+		(property "Reference" "#PWR042"
+			(at 179.07 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 179.07 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 179.07 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "17a073c4-346b-444e-a4b4-d01138ce2b12")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/8fcb1262-e980-4c4d-ae95-df63a5738347"
+					(reference "#PWR042")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:GND")
 		(at 162.56 125.73 0)
 		(mirror y)
 		(unit 1)
@@ -2593,6 +2669,71 @@
 			(project "timer-board"
 				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/8fcb1262-e980-4c4d-ae95-df63a5738347"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "DW-power-symbols:PWR_FLAG")
+		(at 179.07 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4f7635db-d969-4e9a-a6b4-eff80e3c7c71")
+		(property "Reference" "#FLG02"
+			(at 179.07 121.285 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 179.07 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 179.07 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 179.07 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "76ef26a8-b754-4342-a61f-b9dbc12fd4b1")
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c/8fcb1262-e980-4c4d-ae95-df63a5738347"
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)

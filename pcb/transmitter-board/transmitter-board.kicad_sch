@@ -2820,6 +2820,16 @@
 		)
 		(uuid "25776400-9979-4c27-8fee-d01f192e661a")
 	)
+	(text "R_{PROG} = 1100/I_{BAT}"
+		(exclude_from_sim no)
+		(at 21.59 99.568 0)
+		(effects
+			(font
+				(size 0.5 0.5)
+			)
+		)
+		(uuid "4b298e79-21bf-4f9a-ab60-cc90bbe3b9a5")
+	)
 	(text "Battery Protection"
 		(exclude_from_sim no)
 		(at 85.852 79.248 0)
@@ -4965,7 +4975,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1.2k"
+		(property "Value" "10k"
 			(at 22.86 104.1399 0)
 			(effects
 				(font

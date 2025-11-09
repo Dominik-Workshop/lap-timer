@@ -6,11 +6,394 @@
 	(paper "A4")
 	(title_block
 		(title "Lap Timer: Timer Board")
-		(date "2025-10-19")
+		(date "2025-10-22")
 		(rev "1.0.0")
-		(comment 1 "Project author: <author>")
+		(comment 1 "Project author: Dominik Pluta")
 	)
 	(lib_symbols)
+	(bus_alias "I2C"
+		(members "SDA" "SCL")
+	)
+	(wire
+		(pts
+			(xy 114.3 111.76) (xy 116.84 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00e9ea9e-7cff-4acd-8469-2e43c89cede3")
+	)
+	(bus
+		(pts
+			(xy 157.48 82.55) (xy 165.1 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "590795be-839c-4603-8e51-23ea712d42dc")
+	)
+	(wire
+		(pts
+			(xy 116.84 111.76) (xy 116.84 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "655ba3b3-82a7-4555-8b24-964cded0134e")
+	)
+	(wire
+		(pts
+			(xy 114.3 85.09) (xy 127 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96ff5097-d04b-4a97-afdb-ae5e4f3f9ff3")
+	)
+	(wire
+		(pts
+			(xy 114.3 129.54) (xy 116.84 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c645ade6-a827-4838-9538-52436fad36c7")
+	)
+	(wire
+		(pts
+			(xy 114.3 80.01) (xy 127 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d72bb01c-dd83-40c2-98f3-1092f876936e")
+	)
+	(bus
+		(pts
+			(xy 114.3 104.14) (xy 127 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f38fc26f-ed0b-45d2-a41d-23ca0c7db733")
+	)
+	(sheet
+		(at 127 76.2)
+		(size 30.48 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "2f50cfc6-2bbb-4cb9-83db-0430d85aa740")
+		(property "Sheetname" "MCU"
+			(at 127 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu.kicad_sch"
+			(at 127 114.8846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "I2C{I2C}" bidirectional
+			(at 157.48 82.55 0)
+			(uuid "b29c5f40-f630-42c0-a68f-ddc85317a53c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB{USB}" bidirectional
+			(at 127 104.14 180)
+			(uuid "2807e72d-a560-4eaa-a79b-d0d56978461c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GATE_TRIGGER_1" input
+			(at 127 80.01 180)
+			(uuid "4c095a7d-02c3-49c7-ae64-564eb837d0d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GATE_TRIGGER_2" input
+			(at 127 85.09 180)
+			(uuid "9534ba31-99f8-4c19-90ec-2240d31c47f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 88.9 76.2)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "4d16c651-3853-444b-ab87-1e1c14d0b71f")
+		(property "Sheetname" "IR receiver"
+			(at 88.9 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ir-receiver.kicad_sch"
+			(at 88.9 89.4846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GATE_TRIGGER_1" output
+			(at 114.3 80.01 0)
+			(uuid "6969cacc-1bfa-4fbf-bdba-61ad2306d7ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GATE_TRIGGER_2" output
+			(at 114.3 85.09 0)
+			(uuid "7bc977da-7a33-44a6-a770-96e625268f32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 165.1 76.2)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "778074c3-1cb0-4d0b-b940-338c86169e01")
+		(property "Sheetname" "Display"
+			(at 165.1 75.4884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "display.kicad_sch"
+			(at 165.1 89.4846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "I2C{I2C}" bidirectional
+			(at 165.1 82.55 180)
+			(uuid "e6cff997-5b06-4c65-b746-e8520396b2a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 88.9 127)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "77f6e689-c08e-49eb-9519-227052faa756")
+		(property "Sheetname" "Power"
+			(at 88.9 126.2884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 88.9 140.2846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VBUS" input
+			(at 114.3 129.54 0)
+			(uuid "39770976-4d36-419f-9486-051e7a5129a2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 88.9 101.6)
+		(size 25.4 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "8fcb1262-e980-4c4d-ae95-df63a5738347")
+		(property "Sheetname" "USB"
+			(at 88.9 100.8884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb.kicad_sch"
+			(at 88.9 114.8846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB{USB}" bidirectional
+			(at 114.3 104.14 0)
+			(uuid "404877b6-968e-4c51-be77-cbc5ce77fb1c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VBUS" output
+			(at 114.3 111.76 0)
+			(uuid "113cbf18-b3ec-4d43-8e63-3b807b1d1d5d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "timer-board"
+				(path "/c6951331-127b-46f8-97b9-b4f2222f059c"
+					(page "6")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

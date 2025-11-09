@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Lap Timer: Receiver Board")
-		(date "2025-10-19")
+		(date "2025-11-09")
 		(rev "1.0.0")
-		(comment 1 "Project author: <author>")
+		(comment 1 "Project author: Radosław Mierzwa")
 	)
 	(lib_symbols
 		(symbol "DW-capacitors:C-1u-0402"

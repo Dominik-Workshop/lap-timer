@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define GATE_TRIGGER_2_Pin GPIO_PIN_3
+#define GATE_TRIGGER_2_GPIO_Port GPIOC
 #define BTN3_Pin GPIO_PIN_0
 #define BTN3_GPIO_Port GPIOA
 #define BTN2_Pin GPIO_PIN_1
@@ -65,6 +67,8 @@ void Error_Handler(void);
 #define BTN1_GPIO_Port GPIOA
 #define USER_LED_Pin GPIO_PIN_10
 #define USER_LED_GPIO_Port GPIOC
+#define GATE_TRIGGER_1_Pin GPIO_PIN_12
+#define GATE_TRIGGER_1_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

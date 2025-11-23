@@ -43,7 +43,8 @@
 I2C_HandleTypeDef hi2c3;
 
 /* USER CODE BEGIN PV */
-
+volatile uint32_t gate_last_ticks = 0;
+volatile uint32_t gate_delta_ticks = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,7 +57,21 @@ static void MX_I2C3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == GATE_TRIGGER_1_Pin)
+  {
+//    uint32_t now = __HAL_TIM_GET_COUNTER(&htim2);
+//    uint32_t prev = gate_last_ticks;
+//    gate_last_ticks = now;
+//
+//    // Handle wrap-around (32-bit)
+//    gate_delta_ticks = (now >= prev) ? (now - prev) : (0xFFFFFFFFu - prev + 1u + now);
+//    // gate_delta_ticks is time between edges in microseconds (1 tick = 1 µs)
+//    // Optional: flag or process
+  HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -97,8 +112,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
-	HAL_Delay(200);
+	if(HAL_GPIO_ReadPin(GATE_TRIGGER_1_GPIO_Port, GATE_TRIGGER_1_Pin) == 0){
+		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
+	}
+	HAL_Delay(20);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -204,16 +221,16 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : GATE_TRIGGER_2_Pin GATE_TRIGGER_1_Pin */
-  GPIO_InitStruct.Pin = GATE_TRIGGER_2_Pin|GATE_TRIGGER_1_Pin;
+  /*Configure GPIO pin : GATE_TRIGGER_2_Pin */
+  GPIO_InitStruct.Pin = GATE_TRIGGER_2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(GATE_TRIGGER_2_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : BTN3_Pin BTN2_Pin BTN1_Pin */
   GPIO_InitStruct.Pin = BTN3_Pin|BTN2_Pin|BTN1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : USER_LED_Pin */
@@ -222,6 +239,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(USER_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : GATE_TRIGGER_1_Pin */
+  GPIO_InitStruct.Pin = GATE_TRIGGER_1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GATE_TRIGGER_1_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

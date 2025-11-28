@@ -71,7 +71,6 @@ void Error_Handler(void);
 #define USER_LED_GPIO_Port GPIOC
 #define GATE_TRIGGER_1_Pin GPIO_PIN_12
 #define GATE_TRIGGER_1_GPIO_Port GPIOC
-#define GATE_TRIGGER_1_EXTI_IRQn EXTI15_10_IRQn
 
 /* USER CODE BEGIN Private defines */
 

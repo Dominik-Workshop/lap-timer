@@ -115,7 +115,13 @@ int main(void)
 //	if(HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == 0){
 //		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
 //	}
-	HAL_Delay(200);
+	if(HAL_GPIO_ReadPin(GATE_TRIGGER_1_GPIO_Port, GATE_TRIGGER_1_Pin) == 0){
+		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+	}
+	else{
+		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+	}
+	HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -248,8 +254,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : GATE_TRIGGER_1_Pin */
   GPIO_InitStruct.Pin = GATE_TRIGGER_1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GATE_TRIGGER_1_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
@@ -258,9 +264,6 @@ static void MX_GPIO_Init(void)
 
   HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI3_IRQn);
-
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

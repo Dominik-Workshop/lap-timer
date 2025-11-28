@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "display.h"
+#include "sprites.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,7 +106,14 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
+  HAL_Delay(100);
+  display_init();
 
+  display_fill(DISPLAY_COLOR_BLACK);
+  display_bitmap(0, 0, DISPLAY_COLOR_WHITE, bitmap_lap_timer_logo_128_64, 128, 64);
+  display_render();
+
+  HAL_Delay(5000);
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -43,9 +43,15 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c3;
 
+TIM_HandleTypeDef htim2;
+
 /* USER CODE BEGIN PV */
 volatile uint32_t gate_last_ticks = 0;
 volatile uint32_t gate_delta_ticks = 0;
+
+// State: 0 = Idle/Ready, 1 = Running, 2 = Finished (Displaying result)
+volatile uint8_t timer_state = 0;
+volatile uint32_t captured_time_ticks = 0;
 
 #define TIME_DISPLAY_X 1
 #define TIME_DISPLAY_Y 22
@@ -55,6 +61,7 @@ volatile uint32_t gate_delta_ticks = 0;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C3_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -63,18 +70,36 @@ static void MX_I2C3_Init(void);
 /* USER CODE BEGIN 0 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  if (GPIO_Pin == BTN1_Pin)
-  {
-//    uint32_t now = __HAL_TIM_GET_COUNTER(&htim2);
-//    uint32_t prev = gate_last_ticks;
-//    gate_last_ticks = now;
-//
-//    // Handle wrap-around (32-bit)
-//    gate_delta_ticks = (now >= prev) ? (now - prev) : (0xFFFFFFFFu - prev + 1u + now);
-//    // gate_delta_ticks is time between edges in microseconds (1 tick = 1 µs)
-//    // Optional: flag or process
-  HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
-  }
+    if(GPIO_Pin == GATE_TRIGGER_1_Pin)
+    {
+        uint32_t current_ticks = __HAL_TIM_GET_COUNTER(&htim2);
+
+        if(timer_state == 0)
+        {
+            // --- START ---
+            // Reset timer counter to 0
+            __HAL_TIM_SET_COUNTER(&htim2, 0);
+            timer_state = 1; // Set to Running
+        }
+        else if(timer_state == 1)
+        {
+            // --- STOP ATTEMPT ---
+            // 1 second = 1,000,000us. With 10us ticks, that is 100,000 ticks.
+            if(current_ticks > 100000)
+            {
+                captured_time_ticks = current_ticks;
+                timer_state = 2; // Set to Finished
+            }
+            // If < 100000, we ignore it (robot body still passing start line)
+        }
+        else if (timer_state == 2)
+        {
+             // Optional: Allow restart if triggered again after finishing?
+             // Reset to state 0 or 1 here if you want continuous operation.
+             __HAL_TIM_SET_COUNTER(&htim2, 0);
+             timer_state = 1;
+        }
+    }
 }
 
 void display_time(uint32_t time_ms){
@@ -127,6 +152,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C3_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(100);	// Wait for OLED display to power on
   display_init();
@@ -142,28 +168,36 @@ int main(void)
 
   display_render();
 
+  // IMPORTANT: Start the timer hardware!
+    HAL_TIM_Base_Start(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	if(HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == 0){
-//		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
-//	}
-	display_time(time_ms);
-	display_render();
-	++time_ms;
-	if(HAL_GPIO_ReadPin(GATE_TRIGGER_1_GPIO_Port, GATE_TRIGGER_1_Pin) == 0){
-		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
-		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "DET");
-		display_render();
+  uint32_t ticks_to_display = 0;
+
+	if(timer_state == 1)
+	{
+		// Running: read live counter
+		ticks_to_display = __HAL_TIM_GET_COUNTER(&htim2);
+
+		// Convert 10us ticks to ms (divide by 100)
+		display_time(ticks_to_display / 100);
 	}
-	else{
-		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
-		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "NDT");
-		display_render();
+	else if(timer_state == 2)
+	{
+		// Finished: display frozen captured time
+		display_time(captured_time_ticks / 100);
 	}
+	else
+	{
+		// Idle: display 0
+		display_time(0);
+	}
+
+		display_render();
 //	HAL_Delay(1);
     /* USER CODE END WHILE */
 
@@ -252,6 +286,51 @@ static void MX_I2C3_Init(void)
 }
 
 /**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 999;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 4294967295;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -297,7 +376,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : GATE_TRIGGER_1_Pin */
   GPIO_InitStruct.Pin = GATE_TRIGGER_1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GATE_TRIGGER_1_GPIO_Port, &GPIO_InitStruct);
 
@@ -307,6 +386,9 @@ static void MX_GPIO_Init(void)
 
   HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

@@ -14,6 +14,7 @@
 
 #include <stdint.h>
 
+extern const uint8_t *bitmap_deliminator_8_16;
 extern const uint8_t *bitmap_lap_timer_logo_128_64;
 
 #endif

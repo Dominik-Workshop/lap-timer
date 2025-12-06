@@ -47,7 +47,8 @@ I2C_HandleTypeDef hi2c3;
 volatile uint32_t gate_last_ticks = 0;
 volatile uint32_t gate_delta_ticks = 0;
 
-int time_ms = 0;
+#define TIME_DISPLAY_X 1
+#define TIME_DISPLAY_Y 22
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -75,6 +76,25 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
   }
 }
+
+void display_time(uint32_t time_ms){
+	uint32_t time_milliseconds = (time_ms)%1000;
+	uint32_t time_seconds = (time_ms/1000)%60;
+	uint32_t time_minutes = (time_ms/60000)%99;
+	// Minutes
+	display_printf(TIME_DISPLAY_X, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02d", time_minutes);
+
+	display_bitmap(TIME_DISPLAY_X+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
+
+	// Seconds
+	display_printf(TIME_DISPLAY_X+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02d", time_seconds);
+
+	display_bitmap(TIME_DISPLAY_X+(2*16)+7+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
+
+	// Milliseconds
+	display_printf(TIME_DISPLAY_X+(2*16)+7+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%03d", time_milliseconds);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -85,7 +105,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+  int time_ms = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -118,7 +138,8 @@ int main(void)
   HAL_Delay(2000);
 
   display_fill(DISPLAY_COLOR_BLACK);
-  display_printf(10, 20, DISPLAY_COLOR_WHITE, display_font_16x26, "0:00:00");
+//  display_printf(5, 16, DISPLAY_COLOR_WHITE, display_font_7seg_16x32, " !");
+
   display_render();
 
   /* USER CODE END 2 */
@@ -130,20 +151,20 @@ int main(void)
 //	if(HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == 0){
 //		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
 //	}
-	display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "%d", time_ms);
+	display_time(time_ms);
 	display_render();
 	++time_ms;
 	if(HAL_GPIO_ReadPin(GATE_TRIGGER_1_GPIO_Port, GATE_TRIGGER_1_Pin) == 0){
 		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
-//		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "DET");
-//		display_render();
+		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "DET");
+		display_render();
 	}
 	else{
 		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
-//		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "NDT");
-//		display_render();
+		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "NDT");
+		display_render();
 	}
-	HAL_Delay(1);
+//	HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -212,7 +233,7 @@ static void MX_I2C3_Init(void)
 
   /* USER CODE END I2C3_Init 1 */
   hi2c3.Instance = I2C3;
-  hi2c3.Init.ClockSpeed = 100000;
+  hi2c3.Init.ClockSpeed = 400000;
   hi2c3.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c3.Init.OwnAddress1 = 0;
   hi2c3.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;

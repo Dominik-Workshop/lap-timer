@@ -46,6 +46,8 @@ I2C_HandleTypeDef hi2c3;
 /* USER CODE BEGIN PV */
 volatile uint32_t gate_last_ticks = 0;
 volatile uint32_t gate_delta_ticks = 0;
+
+int time_ms = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,14 +108,19 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_Delay(100);
+  HAL_Delay(100);	// Wait for OLED display to power on
   display_init();
 
   display_fill(DISPLAY_COLOR_BLACK);
-  display_bitmap(0, 0, DISPLAY_COLOR_WHITE, bitmap_lap_timer_logo_128_64, 128, 64);
+  display_bitmap(0, 0, DISPLAY_COLOR_BLACK, bitmap_lap_timer_logo_128_64, 128, 64);
   display_render();
 
-  HAL_Delay(5000);
+  HAL_Delay(2000);
+
+  display_fill(DISPLAY_COLOR_BLACK);
+  display_printf(10, 20, DISPLAY_COLOR_WHITE, display_font_16x26, "0:00:00");
+  display_render();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,11 +130,18 @@ int main(void)
 //	if(HAL_GPIO_ReadPin(BTN1_GPIO_Port, BTN1_Pin) == 0){
 //		HAL_GPIO_TogglePin(USER_LED_GPIO_Port, USER_LED_Pin);
 //	}
+	display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "%d", time_ms);
+	display_render();
+	++time_ms;
 	if(HAL_GPIO_ReadPin(GATE_TRIGGER_1_GPIO_Port, GATE_TRIGGER_1_Pin) == 0){
 		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+//		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "DET");
+//		display_render();
 	}
 	else{
 		HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+//		display_printf(10, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "NDT");
+//		display_render();
 	}
 	HAL_Delay(1);
     /* USER CODE END WHILE */

@@ -49,9 +49,9 @@ TIM_HandleTypeDef htim2;
 volatile uint32_t gate_last_ticks = 0;
 volatile uint32_t gate_delta_ticks = 0;
 
-// State: 0 = Idle/Ready, 1 = Running, 2 = Finished (Displaying result)
-volatile uint8_t timer_state = 0;
+volatile uint8_t timer_state = 0; // 0: IDLE, 1: RUNNING, 2: FINISHED
 volatile uint32_t captured_time_ticks = 0;
+volatile uint32_t last_trigger_sys_time = 0; // Uses HAL_GetTick() for debouncing
 
 #define TIME_DISPLAY_X 1
 #define TIME_DISPLAY_Y 22
@@ -72,32 +72,38 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if(GPIO_Pin == GATE_TRIGGER_1_Pin)
     {
-        uint32_t current_ticks = __HAL_TIM_GET_COUNTER(&htim2);
+        // 1. Get current system time in ms for debouncing
+        uint32_t now = HAL_GetTick();
 
-        if(timer_state == 0)
+        // 2. Check if 1 second (1000ms) has passed since the LAST valid action
+        if ((now - last_trigger_sys_time) > 1000)
         {
-            // --- START ---
-            // Reset timer counter to 0
-            __HAL_TIM_SET_COUNTER(&htim2, 0);
-            timer_state = 1; // Set to Running
-        }
-        else if(timer_state == 1)
-        {
-            // --- STOP ATTEMPT ---
-            // 1 second = 1,000,000us. With 10us ticks, that is 100,000 ticks.
-            if(current_ticks > 100000)
+            // Update the last trigger time immediately to block noise
+            last_trigger_sys_time = now;
+
+            if(timer_state == 0 || timer_state == 2)
             {
-                captured_time_ticks = current_ticks;
-                timer_state = 2; // Set to Finished
+                // --- START EVENT ---
+                // (Transition from IDLE or FINISHED -> RUNNING)
+
+                // Reset the precision timer to 0
+                __HAL_TIM_SET_COUNTER(&htim2, 0);
+
+                timer_state = 1; // Set to RUNNING
             }
-            // If < 100000, we ignore it (robot body still passing start line)
-        }
-        else if (timer_state == 2)
-        {
-             // Optional: Allow restart if triggered again after finishing?
-             // Reset to state 0 or 1 here if you want continuous operation.
-             __HAL_TIM_SET_COUNTER(&htim2, 0);
-             timer_state = 1;
+            else if(timer_state == 1)
+            {
+                // --- STOP EVENT ---
+                // (Transition from RUNNING -> FINISHED)
+
+                // Capture the precise time
+                captured_time_ticks = __HAL_TIM_GET_COUNTER(&htim2);
+
+                timer_state = 2; // Set to FINISHED
+
+                // CRITICAL: The 'last_trigger_sys_time' update above ensures
+                // we won't accept a "Start" trigger for at least another 1 second.
+            }
         }
     }
 }
@@ -177,7 +183,9 @@ int main(void)
   while (1)
   {
   uint32_t ticks_to_display = 0;
-
+  	if(HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET){
+  		timer_state = 0;
+  	}
 	if(timer_state == 1)
 	{
 		// Running: read live counter

@@ -161,31 +161,47 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    // --- BTN3 Long Press Logic (Reset Best Time) ---
-    if(HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET) // Active Low
-    {
-        if(btn3_press_start == 0) btn3_press_start = HAL_GetTick(); // Start timer
+	  // --- BTN3 Logic (Short Press = Reset Current, Long Press = Reset Best) ---
+	  if(HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET) // Button is Pressed
+	  {
+		  if(btn3_press_start == 0) {
+			  btn3_press_start = HAL_GetTick(); // Start timer
+		  }
 
-        // If held for > 2000ms (2 seconds)
-        if((HAL_GetTick() - btn3_press_start > 2000) && !btn3_action_done)
-        {
-            best_time_ticks = 0; // Reset variable
-            Save_Best_Time(0);   // Erase Flash
+		  // Check for Long Press while holding
+		  if((HAL_GetTick() - btn3_press_start > 2000) && !btn3_action_done)
+		  {
+			  best_time_ticks = 0; // Reset variable
+			  Save_Best_Time(0);   // Erase Flash
 
-            // Visual Feedback
-            display_fill(DISPLAY_COLOR_BLACK);
-            display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "RESET BEST!");
-            display_render();
-            HAL_Delay(1000);
+			  // Visual Feedback
+			  display_fill(DISPLAY_COLOR_BLACK);
+			  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "RESET BEST!");
+			  display_render();
+			  HAL_Delay(1000);
 
-            btn3_action_done = 1; // Prevent repeated triggers
-        }
-    }
-    else
-    {
-        btn3_press_start = 0;
-        btn3_action_done = 0;
-    }
+			  btn3_action_done = 1; // Prevent repeated triggers
+		  }
+	  }
+	  else // Button is Released
+	  {
+		  // If we were pressing the button...
+		  if(btn3_press_start != 0)
+		  {
+			  // Check if it was a Short Press (and not already handled as a long press)
+			  if(!btn3_action_done && (HAL_GetTick() - btn3_press_start < 2000))
+			  {
+				  // --- SHORT PRESS ACTION: Reset Current Timer ---
+				  timer_state = 0;        // Go back to IDLE
+				  captured_time_ticks = 0; // Clear captured result
+				  __HAL_TIM_SET_COUNTER(&htim2, 0); // Reset hardware timer
+			  }
+
+			  // Reset flags
+			  btn3_press_start = 0;
+			  btn3_action_done = 0;
+		  }
+	  }
 
     // --- Timer Display Logic ---
     uint32_t current_ticks = 0;
@@ -220,7 +236,7 @@ int main(void)
             {
                 best_time_ticks = captured_time_ticks;
 
-                display_printf(0, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "SAVING...");
+                display_printf(0, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "SAVING...     ");
                 display_render();
 
                 Save_Best_Time(best_time_ticks);
@@ -254,7 +270,7 @@ int main(void)
 // --- INTERRUPT CALLBACK ---
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if(GPIO_Pin == GATE_TRIGGER_1_Pin)
+    if(GPIO_Pin == GATE_TRIGGER_1_Pin || GPIO_Pin == GATE_TRIGGER_2_Pin || GPIO_Pin == BTN1_Pin)
     {
         uint32_t now = HAL_GetTick();
         if ((now - last_trigger_sys_time) > 1000)

@@ -46,6 +46,14 @@ uint32_t best_time_ticks = 0xFFFFFFFF; // Default to "Empty"
 
 #define TIME_DISPLAY_X 1
 #define TIME_DISPLAY_Y 22
+
+// DISPLAY RESOLUTION MODES
+typedef enum {
+    RES_MODE_MS,   // Minutes : Seconds : Milliseconds  (MM:SS:MMM)
+    RES_MODE_US    // Seconds : Milliseconds : Microsec (SSS:MMM:UUU) (microsec resolution down to 10us ticks)
+} display_res_mode_t;
+
+volatile display_res_mode_t display_mode = RES_MODE_MS;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,11 +114,9 @@ void Save_Best_Time(uint32_t ticks)
     HAL_FLASH_Lock();
 }
 
-/* Private function prototypes -----------------------------------------------*/
 /* Change the 4th parameter to display_font_t */
-
 void display_formatted_time(int x, int y, uint32_t time_ms, display_font_t font) {
-    char buf[16];
+    char buf[20];
 
     uint32_t total_seconds = time_ms / 1000;
     uint32_t minutes = (total_seconds / 60) % 100;
@@ -118,29 +124,63 @@ void display_formatted_time(int x, int y, uint32_t time_ms, display_font_t font)
     uint32_t milliseconds = time_ms % 1000;
 
     // Format string into a temporary buffer
-    sprintf(buf, "%02lu:%02lu:%03lu", minutes, seconds, milliseconds);
+    // MM:SS:MMM
+    sprintf(buf, "%02lu:%02lu:%03lu", (unsigned long)minutes, (unsigned long)seconds, (unsigned long)milliseconds);
 
     // Pass the font directly to display_printf
-    display_printf(x, y, DISPLAY_COLOR_WHITE, font, buf);
+    display_printf(x, y, DISPLAY_COLOR_WHITE, font, "%s", buf);
 }
 
-// Main Display function for the large timer
+// Main Display function for the large timer (MM:SS:MMM)
 void display_time_large(uint32_t time_ms){
-	uint32_t ms = time_ms % 1000;
-	uint32_t sec = (time_ms / 1000) % 60;
-	uint32_t min = (time_ms / 60000) % 99;
+    uint32_t ms = time_ms % 1000;
+    uint32_t sec = (time_ms / 1000) % 60;
+    uint32_t min = (time_ms / 60000) % 99;
 
-	// Minutes
-	display_printf(TIME_DISPLAY_X, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", min);
-	display_bitmap(TIME_DISPLAY_X+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
+    // Minutes
+    display_printf(TIME_DISPLAY_X, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", (unsigned long)min);
+    display_bitmap(TIME_DISPLAY_X+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
 
-	// Seconds
-	display_printf(TIME_DISPLAY_X+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", sec);
-	display_bitmap(TIME_DISPLAY_X+(2*16)+7+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
+    // Seconds
+    display_printf(TIME_DISPLAY_X+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", (unsigned long)sec);
+    display_bitmap(TIME_DISPLAY_X+(2*16)+7+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
 
-	// Milliseconds
-	display_printf(TIME_DISPLAY_X+(2*16)+7+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%03lu", ms);
+    // Milliseconds
+    display_printf(TIME_DISPLAY_X+(2*16)+7+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%03lu", (unsigned long)ms);
 }
+
+// Show high-resolution time using the large font layout.
+// Input: ticks = TIM2 counter (each tick = 10 us)
+void display_time_highres_large_from_ticks(uint32_t ticks) {
+    // Convert ticks -> total microseconds
+    uint64_t total_us = (uint64_t)ticks * 10ULL;
+
+    // Derive components
+    uint32_t sec = (uint32_t)(total_us / 1000000ULL);         // seconds (may be >99)
+    uint32_t ms  = (uint32_t)((total_us / 1000ULL) % 1000ULL); // milliseconds 0..999
+    uint32_t micro10 = (uint32_t)((total_us % 1000ULL) / 10ULL); // 10us units 0..99
+
+    // Cap seconds to two digits for display (if >99 you can show 99)
+    if (sec > 99) sec = 99;
+
+    // Draw using the same positions as display_time_large so it fits
+    // Left: seconds (2 digits)
+    display_printf(TIME_DISPLAY_X, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", (unsigned long)sec);
+
+    // colon/separator
+    display_bitmap(TIME_DISPLAY_X+(2*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
+
+    // Middle: milliseconds (3 digits)
+    display_printf(TIME_DISPLAY_X+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%03lu", (unsigned long)ms);
+
+    // colon/separator
+    display_bitmap(TIME_DISPLAY_X+(2*16)+7+(3*16), TIME_DISPLAY_Y+3, DISPLAY_COLOR_BLACK, bitmap_deliminator_8_16, 8, 16);
+
+    // Right: microseconds in 10us units (2 digits)
+    // We print %02lu so it uses two digits and fits into the rightmost digit space.
+    display_printf(TIME_DISPLAY_X+(2*16)+7+(3*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", (unsigned long)micro10);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -153,6 +193,11 @@ int main(void)
   /* USER CODE BEGIN 1 */
   uint32_t btn3_press_start = 0;
   uint8_t btn3_action_done = 0;
+
+  // BTN2 edge detection / debounce
+  uint16_t prev_btn2_state = GPIO_PIN_SET; // assume not pressed (pullup)
+  uint32_t btn2_press_time = 0;
+  const uint32_t BTN2_DEBOUNCE_MS = 50; // debounce threshold
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -182,7 +227,7 @@ int main(void)
   // --- Load Best Time from Flash ---
   best_time_ticks = *(__IO uint32_t *)FLASH_STORAGE_ADDR;
 
-  // Sanity check: if flash was empty (0xFFFFFFFF), reset to 0 or treat as "No Time"
+  // Sanity check: if flash was empty (0xFFFFFFFF), treat as "No Time"
   if(best_time_ticks == 0xFFFFFFFF) best_time_ticks = 0;
 
   display_fill(DISPLAY_COLOR_BLACK);
@@ -200,104 +245,156 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  // --- BTN3 Logic (Short Press = Reset Current, Long Press = Reset Best) ---
-	  if(HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET) // Button is Pressed
-	  {
-		  if(btn3_press_start == 0) {
-			  btn3_press_start = HAL_GetTick(); // Start timer
-		  }
+      // --- BTN3 Logic (Short Press = Reset Current, Long Press = Reset Best) ---
+      if(HAL_GPIO_ReadPin(BTN3_GPIO_Port, BTN3_Pin) == GPIO_PIN_RESET) // Button is Pressed (active low)
+      {
+          if(btn3_press_start == 0) {
+              btn3_press_start = HAL_GetTick(); // Start timer
+          }
 
-		  // Check for Long Press while holding
-		  if((HAL_GetTick() - btn3_press_start > 2000) && !btn3_action_done)
-		  {
-			  best_time_ticks = 0; // Reset variable
-			  Save_Best_Time(0);   // Erase Flash
+          // Check for Long Press while holding
+          if((HAL_GetTick() - btn3_press_start > 2000) && !btn3_action_done)
+          {
+              best_time_ticks = 0; // Reset variable
+              Save_Best_Time(0);   // Erase Flash
 
-			  // Visual Feedback
-			  display_fill(DISPLAY_COLOR_BLACK);
-			  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "RESET BEST!");
-			  display_render();
-			  HAL_Delay(1000);
+              // Visual Feedback
+              display_fill(DISPLAY_COLOR_BLACK);
+              display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "RESET BEST!");
+              display_render();
+              HAL_Delay(1000);
 
-			  btn3_action_done = 1; // Prevent repeated triggers
-		  }
-	  }
-	  else // Button is Released
-	  {
-		  // If we were pressing the button...
-		  if(btn3_press_start != 0)
-		  {
-			  // Check if it was a Short Press (and not already handled as a long press)
-			  if(!btn3_action_done && (HAL_GetTick() - btn3_press_start < 2000))
-			  {
-				  // --- SHORT PRESS ACTION: Reset Current Timer ---
-				  timer_state = 0;        // Go back to IDLE
-				  captured_time_ticks = 0; // Clear captured result
-				  __HAL_TIM_SET_COUNTER(&htim2, 0); // Reset hardware timer
-			  }
+              btn3_action_done = 1; // Prevent repeated triggers
+          }
+      }
+      else // Button is Released
+      {
+          // If we were pressing the button...
+          if(btn3_press_start != 0)
+          {
+              // Check if it was a Short Press (and not already handled as a long press)
+              if(!btn3_action_done && (HAL_GetTick() - btn3_press_start < 2000))
+              {
+                  // --- SHORT PRESS ACTION: Reset Current Timer ---
+                  timer_state = 0;        // Go back to IDLE
+                  captured_time_ticks = 0; // Clear captured result
+                  __HAL_TIM_SET_COUNTER(&htim2, 0); // Reset hardware timer
+              }
 
-			  // Reset flags
-			  btn3_press_start = 0;
-			  btn3_action_done = 0;
-		  }
-	  }
+              // Reset flags
+              btn3_press_start = 0;
+              btn3_action_done = 0;
+          }
+      }
+      // ---------------------------------------
 
-    // --- Timer Display Logic ---
-    uint32_t current_ticks = 0;
+      // --- BTN2: toggle resolution on a short press (debounced) ---
+      uint16_t curr_btn2 = HAL_GPIO_ReadPin(BTN2_GPIO_Port, BTN2_Pin);
+      if(curr_btn2 == GPIO_PIN_RESET && prev_btn2_state == GPIO_PIN_SET) {
+          // button pressed down
+          btn2_press_time = HAL_GetTick();
+      }
+      else if(curr_btn2 == GPIO_PIN_SET && prev_btn2_state == GPIO_PIN_RESET) {
+          // button released -> consider it a valid press if held > debounce
+          if(btn2_press_time != 0 && (HAL_GetTick() - btn2_press_time) > BTN2_DEBOUNCE_MS) {
+              // toggle display mode
+              if(display_mode == RES_MODE_MS) display_mode = RES_MODE_US;
+              else display_mode = RES_MODE_MS;
 
-    if(timer_state == 1)
-    {
-        // Running
-        current_ticks = __HAL_TIM_GET_COUNTER(&htim2);
-        display_time_large(current_ticks / 100);
-    }
-    else if(timer_state == 2)
-    {
-        // Finished
-        display_time_large(captured_time_ticks / 100);
+              // provide small feedback
+              display_fill(DISPLAY_COLOR_BLACK);
+              if(display_mode == RES_MODE_MS) {
+                  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "MODE: MM:SS:MS");
+              } else {
+                  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "MODE: SS:MS:US");
+              }
+              display_render();
+              HAL_Delay(600);
+          }
+          btn2_press_time = 0;
+      }
+      prev_btn2_state = curr_btn2;
+      // ---------------------------------------
 
-        // Check for New Record (Logic runs once when state hits 2)
-        // Note: We do this check here every loop, but Save_Best_Time is slow.
-        // Ideally, we should do this inside the Interrupt, but writing Flash in IRQ is risky.
-        // So we do it here, but we need a flag so we don't write every loop.
-        static uint8_t saved_flag = 0;
-        static uint32_t last_captured = 0;
+      // --- Timer Display Logic ---
+      uint32_t current_ticks = 0;
 
-        if(captured_time_ticks != last_captured) {
-            saved_flag = 0; // New lap detected
-            last_captured = captured_time_ticks;
-        }
+      if(timer_state == 1)
+      {
+          // Running
+          current_ticks = __HAL_TIM_GET_COUNTER(&htim2);
 
-        if(saved_flag == 0)
-        {
-            // If valid time (>1 sec) AND (First run OR Better time)
-            if(captured_time_ticks > 100000 && (best_time_ticks == 0 || captured_time_ticks < best_time_ticks))
-            {
-                best_time_ticks = captured_time_ticks;
+          if(display_mode == RES_MODE_MS) {
+              // convert ticks (10us) -> ms
+              display_time_large(current_ticks / 100);
+          } else {
+              // show high-res mode directly from ticks
+        	  display_time_highres_large_from_ticks(current_ticks);
+          }
+      }
+      else if(timer_state == 2)
+      {
+          // Finished
+          if(display_mode == RES_MODE_MS) {
+              display_time_large(captured_time_ticks / 100);
+          } else {
+        	  display_time_highres_large_from_ticks(captured_time_ticks);
+          }
 
-                display_printf(0, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "SAVING...     ");
-                display_render();
+          // Check for New Record (Logic runs once when state hits 2)
+          static uint8_t saved_flag = 0;
+          static uint32_t last_captured = 0;
 
-                Save_Best_Time(best_time_ticks);
-            }
-            saved_flag = 1; // Mark as processed
-        }
-    }
-    else
-    {
-        // Idle
-        display_time_large(0);
-    }
+          if(captured_time_ticks != last_captured) {
+              saved_flag = 0; // New lap detected
+              last_captured = captured_time_ticks;
+          }
 
-    // --- Render Best Time ---
-    display_printf(0, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "BEST:");
-    if(best_time_ticks > 0 && best_time_ticks != 0xFFFFFFFF) {
-        display_formatted_time(30, 0, best_time_ticks/100, display_font_6x8);
-    } else {
-        display_printf(30, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "--:--:---");
-    }
+          if(saved_flag == 0)
+          {
+              // If valid time (>1 sec) AND (First run OR Better time)
+              if(captured_time_ticks > 100000 && (best_time_ticks == 0 || captured_time_ticks < best_time_ticks))
+              {
+                  best_time_ticks = captured_time_ticks;
 
-    display_render();
+                  display_printf(0, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "SAVING...     ");
+                  display_render();
+
+                  Save_Best_Time(best_time_ticks);
+              }
+              saved_flag = 1; // Mark as processed
+          }
+      }
+      else
+      {
+          // Idle
+          if(display_mode == RES_MODE_MS) {
+              display_time_large(0);
+          } else {
+        	  display_time_highres_large_from_ticks(0);
+          }
+      }
+
+      // --- Render Best Time (top-left) ---
+      display_printf(0, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "BEST:");
+      if(best_time_ticks > 0 && best_time_ticks != 0xFFFFFFFF) {
+          if(display_mode == RES_MODE_MS) {
+              // best_time_ticks -> ms
+              display_formatted_time(30, 0, best_time_ticks/100, display_font_6x8);
+          } else {
+              // show best time in highres: compute total_us and print SS:MMM:UUU with small font
+              uint64_t total_us = (uint64_t)best_time_ticks * 10ULL;
+              uint32_t us = total_us % 1000;
+              uint32_t ms = (total_us / 1000) % 1000;
+              uint32_t sec = (uint32_t)(total_us / 1000000ULL);
+              display_printf(30, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "%03lu:%03lu:%03lu",
+                             (unsigned long)sec, (unsigned long)ms, (unsigned long)us);
+          }
+      } else {
+          display_printf(30, 0, DISPLAY_COLOR_WHITE, display_font_6x8, "--:--:---");
+      }
+
+      display_render();
 
     /* USER CODE END WHILE */
 

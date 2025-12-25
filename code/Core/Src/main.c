@@ -147,7 +147,9 @@ void display_time_large(uint32_t time_ms){
 
     // Milliseconds
     display_printf(TIME_DISPLAY_X+(2*16)+7+(2*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%03lu", (unsigned long)ms);
-}
+
+    display_line(0, TIME_DISPLAY_Y+37, 127, TIME_DISPLAY_Y+37, DISPLAY_COLOR_WHITE);
+    display_printf(5, TIME_DISPLAY_Y+27, DISPLAY_COLOR_WHITE, display_font_7x10, "min | sec |  ms");}
 
 // Show high-resolution time using the large font layout.
 // Input: ticks = TIM2 counter (each tick = 10 us)
@@ -179,6 +181,9 @@ void display_time_highres_large_from_ticks(uint32_t ticks) {
     // Right: microseconds in 10us units (2 digits)
     // We print %02lu so it uses two digits and fits into the rightmost digit space.
     display_printf(TIME_DISPLAY_X+(2*16)+7+(3*16)+7, TIME_DISPLAY_Y, DISPLAY_COLOR_WHITE, display_font_16x26, "%02lu", (unsigned long)micro10);
+
+    display_line(0, TIME_DISPLAY_Y+37, 127, TIME_DISPLAY_Y+37, DISPLAY_COLOR_WHITE);
+	display_printf(5, TIME_DISPLAY_Y+27, DISPLAY_COLOR_WHITE, display_font_7x10, "sec |  ms  |  us");
 }
 
 /* USER CODE END 0 */
@@ -301,15 +306,15 @@ int main(void)
               if(display_mode == RES_MODE_MS) display_mode = RES_MODE_US;
               else display_mode = RES_MODE_MS;
 
-              // provide small feedback
               display_fill(DISPLAY_COLOR_BLACK);
-              if(display_mode == RES_MODE_MS) {
-                  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "MODE: MM:SS:MS");
-              } else {
-                  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "MODE: SS:MS:US");
-              }
-              display_render();
-              HAL_Delay(600);
+              // provide small feedback
+//              if(display_mode == RES_MODE_MS) {
+//                  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "MODE: MM:SS:MS");
+//              } else {
+//                  display_printf(10, 30, DISPLAY_COLOR_WHITE, display_font_7x10, "MODE: SS:MS:US");
+//              }
+//              display_render();
+//              HAL_Delay(600);
           }
           btn2_press_time = 0;
       }

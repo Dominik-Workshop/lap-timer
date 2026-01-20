@@ -24,7 +24,7 @@ Infrared light barriers are used as optical triggers to detect when an object cr
 
 ## Project Status
 
-**Design:** ⌛ --> **Fabrication & Assembly:** ❌ --> **Bring-up:** ❌
+**Design:** ✅ --> **Fabrication & Assembly:** ✅ --> **Bring-up:** ✅
 
 ## Electronics
 
@@ -57,7 +57,9 @@ Each board has a custom-designed **3D printed enclosure**.
 
 ## Used Tools
 
-<img src="img/logos/KiCad.png" align="center" height="64">
+- [KiCad](https://www.kicad.org/) - Schematic and PCB design
+- [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/) - 3D modeling
+- [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) - STM32 firmware development (build/flash/debug)
 
 ## Authors
 

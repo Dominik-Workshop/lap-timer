@@ -2,7 +2,12 @@
 /**
   ******************************************************************************
   * @file           : main.c
-  * @brief          : Main program body
+  * @author         : Dominik Pluta
+  * @brief          : Lap timer code
+  *                   Measure time between interrupts from IR sensor and display
+  *                   it on OLED display
+  * @version        : 1.0.0
+  * @date           : 28.12.2025
   ******************************************************************************
   */
 /* USER CODE END Header */

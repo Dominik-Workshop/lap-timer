@@ -2,9 +2,9 @@
 
 [![License](https://img.shields.io/github/license/Dominik-Workshop/lap-timer)](https://github.com/Dominik-Workshop/lap-timer/blob/main/LICENSE) ![Repo Size](https://img.shields.io/github/repo-size/Dominik-Workshop/lap-timer)
 
-<!-- <p align="center">
-  <img src="img/renders/hero-image.png" width=80% alt="Hero image">
-</p> -->
+<p align="center">
+  <img src="img/photos/timer-board-module.png" width=80% alt="Hero image">
+</p>
 
 ## Overview
 
